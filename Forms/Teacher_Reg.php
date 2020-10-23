@@ -7,7 +7,7 @@
 <body>
 
 
-<form action="../Result.php" method-'post'  >
+<form action="../Result.php" method='post'  >
     <table style="width:30%" align=center >
 
         <tr>
