@@ -25,7 +25,7 @@ class IPerson
         return $this->name;
     }
 	
-	function setEmail($email)
+    function setEmail($email)
     {
         $this->email=$email;
     }
