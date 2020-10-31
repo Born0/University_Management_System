@@ -2,27 +2,162 @@
 <html>
     <head>
         <meta lang="en-us">
-        <h1>Web University Bangladesh</h1>
+        <h1 style="width:40%" align= center>Web University Bangladesh</h1>
     </head>
     <body>
+        <?php
+            $name=$email=$dob=$gender=$blood=$contact=$address=$religion=$joining_year=$dept=$designation=$working_experience=$salary=$password="";
+            $error_msg="";
+            if($_SERVER["REQUEST_METHOD"]=="POST")
+            {
+                
+                if(empty($_REQUEST["name"]))
+                {
+                   $error_msg="Error";
+                }
+                else
+                {      
+                    $name=$_REQUEST["name"];  $error_msg="";  
+                }
+
+                if(empty($_REQUEST["email"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $email=$_REQUEST["email"]; $error_msg="";                    
+                }
+
+                if(empty($_REQUEST["birthday"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $dob=$_REQUEST["birthday"];  $error_msg="";                
+                }
+
+                if(empty($_REQUEST["gender"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $gender=$_REQUEST["gender"];  $error_msg="";                  
+                }
+                
+                if(empty($_REQUEST["blood"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $blood=$_REQUEST["blood"];   $error_msg="";  
+                }
+
+                if(empty($_REQUEST["contact"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $contact=$_REQUEST["contact"]; $error_msg="";                 
+                }
+
+                if(empty($_REQUEST["address"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $address=$_REQUEST["address"];  $error_msg="";                 
+                }
+
+                if(empty($_REQUEST["religion"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $religion=$_REQUEST["religion"];  $error_msg="";                 
+                }
+
+                if(empty($_REQUEST["joining_year"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $joining_year=$_REQUEST["joining_year"]; $error_msg="";                   
+                }
+
+                if(empty($_REQUEST["dept"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $dept=$_REQUEST["dept"];       $error_msg="";             
+                }
+
+                if(empty($_REQUEST["designation"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $designation=$_REQUEST["designation"];     $error_msg="";               
+                }
+
+                if(empty($_REQUEST["working_experience"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $working_experience=$_REQUEST["working_experience"];   $error_msg="";                
+                }
+
+                if(empty($_REQUEST["salary"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $salary=$_REQUEST["salary"];    $error_msg="";
+                }
+
+                if(empty($_REQUEST["password"]))
+                {
+                   $error_msg="Error ";
+                }
+                else
+                {
+                    $password=$_REQUEST["password"];   $error_msg="";               
+                }
+
+            
+            }
+            ?>
         <fieldset style="width:40%" >
             <legend><b>Teacher Registration</b></legend>
-            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" metdod='post'  >
+            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST"  >
                 <table align=center >
                     <tr>
                         <td>Name </td>
-                        <td> :   <input type="text" name="name" ></td>
+                        <td> :   <input type="text" name="name" > <?php echo $error_msg; ?> </td>
                     </tr>
                     <tr>
                         <td>Email </td>
-                        <td>:   <input type="email" name="email"  ></td>
+                        <td>:   <input type="email" name="email"  ><?php echo $error_msg; ?> </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="birthday">Date of Birth</label>
                         </td>
                         <td> 
-                            :   <input type="date" id="birthday" name="birthday">
+                            :   <input type="date" id="birthday" name="birthday"><?php echo $error_msg;; ?>
                         </td>
                     </tr>
                     <tr>
@@ -52,19 +187,19 @@
                     </tr>
                     <tr>
                         <td>Contact Number  </td>
-                        <td>:   <input type="text"  name="contact" ></td>
+                        <td>:   <input type="text"  name="contact" ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td>Address </td>
-                        <td>:   <input type="text"  name="address"  ></td>
+                        <td>:   <input type="text"  name="address"  ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td>Religion </td>
-                        <td>:   <input type="text"  name="religion"  ></td>
+                        <td>:   <input type="text"  name="religion"  ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td>Joining Year </td>
-                        <td>:   <input type="text" name="joining_year"   ></td>
+                        <td>:   <input type="text" name="joining_year"   ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td><label for="dept"> Department:</label></td>
@@ -80,19 +215,19 @@
                     </tr>
                     <tr>
                         <td>Designation </td>
-                        <td>:   <input type="text"  name="designation"  ></td>
+                        <td>:   <input type="text"  name="designation"  ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td>Working Experience </td>
-                        <td>:   <input type="text"  name="working_experience" ></td>
+                        <td>:   <input type="text"  name="working_experience" ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td>Salary </td>
-                        <td>:   <input type="text" name="salary"  ></td>
+                        <td>:   <input type="text" name="salary"  ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td>Password  </td>
-                        <td>:   <input type="password" name="password" ></td>
+                        <td>:   <input type="password" name="password" ><?php echo $error_msg; ?></td>
                     </tr>
                     <tr>
                         <td>
@@ -103,86 +238,17 @@
                 </table>
             </form>
         </fieldset>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td> <?php echo $name ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><?php echo $email ?></td>
+                    </tr>
+                </table>
 
-
-        <?php
-
-            $name=$email=$dob=$gender=$blood=$contact=$address=$religion=$joining_year=$dept=$designation=$working_experience=$salary=$password="";
-
-            if($_SERVER["REQUEST_METHOD"]=="POST")
-            {
-                $name=$_REQUEST["name"];
-                $email=$_REQUEST["email"];
-                $dob=$_REQUEST["birthday"];
-                $gender=$_REQUEST["gender"];
-                $blood=$_REQUEST["blood"];
-                $contact=$_REQUEST["contact"];
-                $address=$_REQUEST["address"];
-                $religion=$_REQUEST["religion"];
-                $joining_year=$_REQUEST["joining_year"];
-                $dept=$_REQUEST["dept"];
-                $designation=$_REQUEST["designation"];
-                $working_experience=$_REQUEST["working_experience"];
-                $salary=$_REQUEST["salary"];
-                $password=$_REQUEST["password"];
-            }
-
-                echo isEmpty($name);
-                echo isEmpty($email); 
-                echo isEmpty($dob);
-                echo isEmpty($gender);
-                echo isEmpty($blood);
-                echo isEmpty($contact);
-                echo isEmpty($address);
-                echo isEmpty($religion);
-                echo isEmpty($joining_year);
-                echo isEmpty($dept);
-                echo isEmpty($designation);
-                echo isEmpty($working_experience);
-                echo isEmpty($salary);
-                echo isEmpty($password);
-            
-        
-            function isEmpty($attriubte)
-            {
-                if(empty($attriubte)) 
-                {
-                    echo "<br>";
-                    return "please fill the box";   
-                }
-                else 
-                {
-                    echo "<br>";
-                    return $attriubte;
-                }    
-            }
-    
-
-        // echo $dob;
-        // echo "<br>";
-        // echo $gender;
-        // echo "<br>";
-        // echo $blood;
-        // echo "<br>";
-        // echo $contact;
-        // echo "<br>";
-        // echo $address;
-        // echo "<br>";
-        // echo $religion;
-        // echo "<br>";
-        // echo $joining_year;
-        // echo "<br>";
-        // echo $dept;
-        // echo "<br>";
-        // echo $designation;
-        // echo "<br>";
-        // echo $working_experience;
-        // echo "<br>";
-        // echo $salary;
-        // echo "<br>";
-        // echo $password;
-        // echo "<br>";
-
-    ?>
+                   
     </body>
 </html>
