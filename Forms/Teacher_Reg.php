@@ -242,10 +242,14 @@
                         <td>:   <input type="password" name="password" ><?php echo $error_password ?> </td>
                     </tr>
                     <tr>
+                        <td> Profile image</td>
                         <td>
                             <input type="file" name="fileToUpload" id="fileToUpload">
                             <br>
                         </td>
+                    </tr>
+                    <tr>
+                        <td><br><br></td>
                     </tr>
                     <tr>
                         <td>
