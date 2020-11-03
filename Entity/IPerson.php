@@ -3,7 +3,7 @@
 
 <?php
 
-class IPerson 
+interface IPerson 
 {
     private $name;
     private $email;
