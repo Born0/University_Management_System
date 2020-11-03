@@ -3,7 +3,7 @@
 
 <?php
 
-interface IPerson 
+trait IPerson 
 {
     private $name;
     private $email;

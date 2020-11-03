@@ -2,13 +2,14 @@
 <html lang="en">
 
 <?php
-
-class Teacher implements IPerson
+include 'IPerson.php';
+class Teacher 
 {
-    $joinig_year;
-    $salary;
-    $dept_id;
-    $designation;
+    use IPerson;
+    private $joinig_year;
+    private $salary;
+    private $dept_id;
+    private $designation;
 
 	function setJoinig_year($joinig_year)
     {
