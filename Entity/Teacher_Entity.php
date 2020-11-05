@@ -2,10 +2,10 @@
 <html lang="en">
 
 <?php
-include 'IPerson.php';
+include 'Person.php';
 class Teacher 
 {
-    use IPerson;
+    use Person;
     private $joinig_year;
     private $salary;
     private $dept_id;

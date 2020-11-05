@@ -4,7 +4,7 @@
     <?php 
         include '../Entity/Teacher_Entity.php';
         $t=new Teacher();
-        $t->setName("");
+        $t->setName("hello");
         echo $t->getName();
     ?>
 </body>

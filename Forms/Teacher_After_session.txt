@@ -7,16 +7,29 @@
     <body>
         <?php
 
-            function SessionStart()
+            session_start(); 
+
+            $error="";
+            
+            if (isset($_POST['submit'])) 
             {
-                session_start(); 
-                // $email=$_POST['email'];
-                // $password=$_POST['password'];
-                // $name=$_POST['name'];
-                header("location: ../Result.php");
+                if (empty($_POST['email']) || empty($_POST['password'])) 
+                {
+                    $error = "email or Password is invalid";
+                }
+                else
+                {
+                    $email=$_POST['email'];
+                    $password=$_POST['password'];
+                    $name=$_POST['name'];
+ 
+                }
             }
 
-                 
+            if(isset($_SESSION['email']))
+            {
+                header("location: ../Result.php");
+            }      
         ?>
 
         <?php
@@ -26,7 +39,7 @@
             $file_status="";
             if($_SERVER["REQUEST_METHOD"]=="POST")
             {
-                SessionStart();
+                
                 if(empty($_REQUEST["name"]))
                 {
                     $error_name="  Invalid name";

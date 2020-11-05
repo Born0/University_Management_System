@@ -3,7 +3,7 @@
 
 <?php
 
-trait IPerson 
+trait Person 
 {
     private $name;
     private $email;
