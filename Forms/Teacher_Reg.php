@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-
+            $flag= false;
             function SessionStart()
             {
                 session_start(); 
@@ -15,8 +15,7 @@
                 // $name=$_POST['name'];
                 header("location: ../Result.php");
             }
-
-                 
+        
         ?>
 
         <?php
@@ -24,15 +23,20 @@
             $error_name=$error_email=$error_dob=$error_gender=$error_blood=$error_contact=$error_address=$error_religion=$error_joining_year=$error_dept="";
             $error_designation=$error_working_experience=$error_salary=$error_password="";
             $file_status="";
+            
             if($_SERVER["REQUEST_METHOD"]=="POST")
             {
                 SessionStart();
+
+
                 if(empty($_REQUEST["name"]))
                 {
                     $error_name="  Invalid name";
+                    $flag=false;
                 }
                 else
                 {      
+                    $flag=true;
                     $name=$_REQUEST["name"]; 
                     $_SESSION["name"] = $name;
                 }
@@ -40,9 +44,11 @@
                 if(empty($_REQUEST["email"]))
                 {
                     $error_email="  Invalid email";
+                    $flag=false;
                 }
                 else
                 {
+                    $flag=true;
                     $email=$_REQUEST["email"];   
                     $_SESSION["email"] = $email;                   
                 }
@@ -149,9 +155,11 @@
                 if(empty($_REQUEST["password"]))
                 {
                     $error_password="  Invalid password";
+                    $flag=false;
                 }
                 else
                 {
+                    $flag=true;
                     $password=$_REQUEST["password"];  
                     $_SESSION["password"] = $password;                 
                 }
@@ -166,6 +174,8 @@
                 {
                     $file_status="Sorry, there was an error uploading your file.";
                 }
+
+                checkFlag();
             
             }
             ?>
