@@ -2,7 +2,7 @@
 
 //include('DataAccess.php');
 //include('../Entity/Teacher_Entity.php');
-//include('../control/Reg_check.php');
+//include('../control/Teacher-Reg_check.php');
 
 class Teacher_repo
 {

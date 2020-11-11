@@ -9,7 +9,7 @@
 <body>
 
     <?php
-    include('../control/Reg_check.php');
+    include('../control/Teacher_Reg_check.php');
     ?>
 
 
