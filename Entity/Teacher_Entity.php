@@ -32,7 +32,7 @@ class Teacher extends Person
     {
         $this->dept = $dept;
     }
-    function getDept_id()
+    function getDept()
     {
         return $this->dept;
     }

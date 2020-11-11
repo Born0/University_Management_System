@@ -136,7 +136,7 @@ if (isset($_POST['submit'])) {
 
     if ($flag) {
         $t_repo = new Teacher_repo();
-        $t_repo->insert($teacher);
+        $t_repo->Insert($teacher);
     } else {
         $db_error = "Fill all the fileds!";
     }
