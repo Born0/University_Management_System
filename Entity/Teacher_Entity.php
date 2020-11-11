@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
-include 'Person.php';
-class Teacher 
+include('Person.php');
+class Teacher extends Person
 {
-    use Person;
+    //use Person;
     private $joinig_year;
     private $salary;
-    private $dept_id;
+    private $dept;
     private $designation;
+    private $working_experience;
 
-	function setJoinig_year($joinig_year)
+
+    function setJoinig_year($joinig_year)
     {
-        $this->joinig_year=$joinig_year;
+        $this->joinig_year = $joinig_year;
     }
     function getJoinig_year()
     {
@@ -22,33 +21,37 @@ class Teacher
 
     function setSalary($salary)
     {
-        $this->salary=$salary;
+        $this->salary = $salary;
     }
     function getSalary()
     {
         return $this->salary;
     }
 
-    function setDept_id($dept_id)
+    function setDept($dept)
     {
-        $this->dept_id=$dept_id;
+        $this->dept = $dept;
     }
     function getDept_id()
     {
-        return $this->dept_id=$dept_id;
+        return $this->dept;
     }
-    
-    function setDesignation($designation)
 
+    function setDesignation($designation)
     {
-        $this->designation=$designation;
+        $this->designation = $designation;
     }
     function getDesignation()
     {
         return $this->designation;
     }
+
+    function setWorking_Experience($work)
+    {
+        $this->working_experience = $work;
+    }
+    function getWorking_Experience()
+    {
+        return $this->working_experience;
+    }
 }
-
-
-?>
-</html>

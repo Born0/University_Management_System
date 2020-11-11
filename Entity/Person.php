@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 
-trait Person 
+class Person
 {
     private $name;
     private $email;
@@ -15,92 +12,87 @@ trait Person
     private $address;
     private $religion;
     private $blood;
-    
+
     function setName($name)
     {
-        $this->name=$name;
+        $this->name = $name;
     }
     function getName()
     {
         return $this->name;
     }
-	
+
     function setEmail($email)
     {
-        $this->email=$email;
+        $this->email = $email;
     }
     function getEmail()
     {
         return $this->email;
     }
-	function setId($id)
+    function setId($id)
     {
-        $this->id=$id;
+        $this->id = $id;
     }
     function getId()
     {
         return $this->id;
     }
-	function setPassword($password)
+    function setPassword($password)
     {
-        $this->password=$password;
+        $this->password = $password;
     }
     function getPassword()
     {
         return $this->password;
     }
-	function setDob($dob)
+    function setDob($dob)
     {
-        $this->dob=$dob;
+        $this->dob = $dob;
     }
     function getDob()
     {
         return $this->dob;
     }
-	function setGender($gender)
+    function setGender($gender)
     {
-        $this->gender=$gender;
+        $this->gender = $gender;
     }
     function getGender()
     {
         return $this->gender;
     }
-	
-	function setContact($contact)
+
+    function setContact($contact)
     {
-        $this->contact=$contact;
+        $this->contact = $contact;
     }
     function getContact()
     {
         return $this->contact;
     }
-	function setAddress($address)
+    function setAddress($address)
     {
-        $this->address=$address;
+        $this->address = $address;
     }
     function getAddress()
     {
         return $this->address;
     }
-	function setReligion($religion)
+    function setReligion($religion)
     {
-        $this->religion=$religion;
+        $this->religion = $religion;
     }
     function getReligion()
     {
         return $this->religion;
     }
-	function setBlood($blood)
+    function setBlood($blood)
     {
-        $this->blood=$blood;
+        $this->blood = $blood;
     }
     function getBlood()
     {
         return $this->blood;
     }
-
 }
-
-
-?>
-</html>
