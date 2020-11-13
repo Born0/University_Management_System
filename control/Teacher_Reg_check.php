@@ -4,10 +4,14 @@ include('../Repository/Teacher_repo.php');
 session_start();
 $teacher = new Teacher();
 $error_name = $error_email = $error_dob = $error_gender = $error_blood = $error_contact = $error_address = $error_religion = $error_joining_year = $error_dept = "";
-$error_designation = $error_working_experience = $error_salary = $error_password = "";
+$error_designation = $error_working_experience = $error_salary = $error_password = $error_image = "";
 $file_status = "";
 $flag = true;
 $db_error = "";
+
+if (isset($_POST['refresh'])) {
+    header("Refresh:0; url=Teacher_Reg.php");
+}
 
 if (isset($_POST['submit'])) {
 
@@ -130,6 +134,18 @@ if (isset($_POST['submit'])) {
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         $file_status = "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+
+        ///////////////////
+        // if (empty($target_file)) {
+        //     $error_image = "upload a image";
+        //     $flag = false;
+        // } else {
+        //     //$image = $target_file;
+        //     $_SESSION["fileToUpload"] = $target_file;
+        //     $teacher->setImage($target_file);
+        // }
+        //////////////////
+        $teacher->setImage($target_file);
     } else {
         $file_status = "Sorry, there was an error uploading your file.";
     }

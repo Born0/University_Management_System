@@ -105,7 +105,7 @@
                 <tr>
                     <td> Profile image</td>
                     <td>
-                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="file" name="fileToUpload" id="fileToUpload"> <?PHP echo $error_image; ?>
                         <br>
                     </td>
                 </tr>
@@ -115,7 +115,7 @@
                 <tr>
                     <td>
                         <input type="submit" name=submit value="Submit">
-                        <input type="reset" name=reset value="Reset">
+                        <input type="submit" name=refresh value="Refresh">
                     </td>
                 </tr>
             </table>

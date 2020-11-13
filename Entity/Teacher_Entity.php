@@ -2,7 +2,6 @@
 include('Person.php');
 class Teacher extends Person
 {
-    //use Person;
     private $joinig_year;
     private $salary;
     private $dept;
