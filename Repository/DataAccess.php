@@ -18,6 +18,16 @@ class DataAccess
         }
     }
 
+    function ReaderQuery($query)
+    {
+        $result = $this->conn->query($query);
+        if ($result != null) {
+            return $result;
+        } else {
+            //return null;
+        }
+    }
+
     function __destruct()
     {
         $this->conn->close();

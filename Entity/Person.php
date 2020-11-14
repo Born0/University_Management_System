@@ -12,6 +12,7 @@ class Person
     private $address;
     private $religion;
     private $blood;
+    private $image;
 
     function setName($name)
     {
@@ -94,5 +95,14 @@ class Person
     function getBlood()
     {
         return $this->blood;
+    }
+
+    function setImage($image)
+    {
+        $this->image = $image;
+    }
+    function getImage()
+    {
+        return $this->image;
     }
 }
