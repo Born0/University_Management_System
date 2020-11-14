@@ -30,7 +30,7 @@ class Teacher_repo
             //return $id;
             echo "your id is:" . $id;
         } else {
-            echo "iNSERT ERROR";
+            echo "INSERT ERROR";
             //return null;
         }
     }
