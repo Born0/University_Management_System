@@ -23,7 +23,7 @@ class Teacher_repo
         '" . $entity->getBlood() . "','" . $entity->getAddress() . "','" . $entity->getContact() . "',
         '" . $entity->getReligion() . "','" . $entity->getJoinig_year() . "','" . $entity->getSalary() . "',
         '" . $entity->getDept() . "','" . $entity->getDesignation() . "','" . $entity->getPassword() . "','" . $entity->getImage() . "')";
-        echo $entity->getImage();
+
         $result = $this->db->executeQuery($sql);
         if ($result > 0) {
             $id = $this->Get($entity)->getId();

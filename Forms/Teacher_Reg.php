@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <td>Email </td>
-                    <td>: <input type="email" name="email"> <?php echo $error_email ?> </td>
+                    <td>: <input type="text" name="email"> <?php echo $error_email ?> </td>
                 </tr>
                 <tr>
                     <td>
@@ -72,7 +72,7 @@
                 </tr>
                 <tr>
                     <td>Joining Year </td>
-                    <td>: <input type="text" name="joining_year"><?php echo $error_joining_year ?> </td>
+                    <td>: : <input type="date" id="joining_year" name="joining_year"><?php echo $error_joining_year ?> </td>
                 </tr>
                 <tr>
                     <td><label for="dept"> Department:</label></td>

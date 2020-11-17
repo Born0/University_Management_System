@@ -17,11 +17,15 @@ if (isset($_POST['submit'])) {
 
     if (empty($_REQUEST["name"])) {
         $error_name = "  Invalid name";
-        $flag = false;
     } else {
         $name = $_REQUEST["name"];
-        $_SESSION["name"] = $name;
-        $teacher->setName($name);
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+            $error_name = "Only letters and white space allowed";
+            $flag = false;
+        } else {
+            $_SESSION["name"] = $name;
+            $teacher->setName($name);
+        }
     }
 
     if (empty($_REQUEST["email"])) {
@@ -29,8 +33,13 @@ if (isset($_POST['submit'])) {
         $flag = false;
     } else {
         $email = $_REQUEST["email"];
-        $_SESSION["email"] = $email;
-        $teacher->setEmail($email);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error_email = "Invalid email format";
+            $flag = false;
+        } else {
+            $_SESSION["email"] = $email;
+            $teacher->setEmail($email);
+        }
     }
 
     if (empty($_REQUEST["birthday"])) {
@@ -62,7 +71,12 @@ if (isset($_POST['submit'])) {
         $flag = false;
     } else {
         $contact = $_REQUEST["contact"];
-        $teacher->setContact($contact);
+        if (!preg_match("/^[0-9]*$/", $contact)) {
+            $error_contact = "Only number allowed";
+            $flag = false;
+        } else {
+            $teacher->setContact($contact);
+        }
     }
 
     if (empty($_REQUEST["address"])) {
@@ -78,7 +92,12 @@ if (isset($_POST['submit'])) {
         $flag = false;
     } else {
         $religion = $_REQUEST["religion"];
-        $teacher->setReligion($religion);
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $religion)) {
+            $$error_religion = "Only letters and white space allowed";
+            $flag = false;
+        } else {
+            $teacher->setReligion($religion);
+        }
     }
 
     if (empty($_REQUEST["joining_year"])) {
@@ -102,7 +121,12 @@ if (isset($_POST['submit'])) {
         $flag = false;
     } else {
         $designation = $_REQUEST["designation"];
-        $teacher->setDesignation($designation);
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $designation)) {
+            $error_designation = "Only letters and white space allowed";
+            $flag = false;
+        } else {
+            $teacher->setDesignation($designation);
+        }
     }
 
     if (empty($_REQUEST["working_experience"])) {
@@ -110,7 +134,12 @@ if (isset($_POST['submit'])) {
         $flag = false;
     } else {
         $working_experience = $_REQUEST["working_experience"];
-        $teacher->setWorking_Experience($working_experience);
+        if (!preg_match("/^[0-9 ]*$/", $working_experience)) {
+            $error_working_experience = "Only Number allowed";
+            $flag = false;
+        } else {
+            $teacher->setWorking_Experience($working_experience);
+        }
     }
 
     if (empty($_REQUEST["salary"])) {
@@ -118,7 +147,12 @@ if (isset($_POST['submit'])) {
         $flag = false;
     } else {
         $salary = $_REQUEST["salary"];
-        $teacher->setSalary($salary);
+        if (!preg_match("/^[0-9 ]*$/", $salary)) {
+            $error_salary = "Only Number allowed";
+            $flag = false;
+        } else {
+            $teacher->setSalary($salary);
+        }
     }
 
     if (empty($_REQUEST["password"])) {
@@ -133,7 +167,7 @@ if (isset($_POST['submit'])) {
     $target_dir = "files/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        $file_status = "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        //$file_status = "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
 
         ///////////////////
         // if (empty($target_file)) {
@@ -154,6 +188,6 @@ if (isset($_POST['submit'])) {
         $t_repo = new Teacher_repo();
         $t_repo->Insert($teacher);
     } else {
-        $db_error = "Fill all the fileds!";
+        $db_error = "Database Error!";
     }
 }
