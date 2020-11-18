@@ -25,7 +25,7 @@
 	}
 	function formNotFilled()
 	{
-		global $name, $studentId, $dob, $gender, $religion, $country, $city, $address, $admissionDate, $bloodgroup, $email;
+		global $name, $studentId, $dob, $gender, $religion, $country, $city, $address, $admissionDate, $bloodgroup, $email, $password;
 		if ($studentId == "" || $name == "" || $dob == "" || $gender == "" || $religion == "" || $country == "" || $city == "" || $address == "" || $admissionDate == "" || $bloodgroup == "" || $email == "" || $password == "")
 			return true;
 		else return false;
