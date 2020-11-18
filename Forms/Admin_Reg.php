@@ -43,7 +43,7 @@
 			}
 		  function formNotFilled()
 		  {
-			  global $name,$mail,$dob,$gender,$bloodtype,$number,$address,$religion,$joinDate,$salary;
+			  global $name,$mail,$dob,$gender,$bloodtype,$number,$address,$religion,$joinDate,$salary,$password;
 			  if($name==""||$mail==""||$dob==""||$gender==""||$bloodtype==""||$number==""||$address==""||$religion==""||$joinDate==""||$salary==""||$password=="")
 				  return true;
 			  else return false;
