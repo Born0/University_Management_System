@@ -1,23 +1,19 @@
 <?php
 include('DataAccess.php');
-//include('../Entity/Teacher_Entity.php');
-//include('../control/Teacher-Reg_check.php');
+
 
 class Teacher_repo
 {
-    //private $teacher;
     private $db;
     function __construct()
     {
-        //$this->teacher = new Teacher();
+
         $this->db = new DataAccess();
     }
 
     function Insert(Teacher $entity)
     {
-        //$this->teacher = $entity;
-        //echo "hello from insert";
-        //echo $this->teacher->getContact();
+
         $sql = "INSERT INTO teacher(t_name,email,dob,gender,blood_group,address,contact_number,religion,joining_year,salary,department,designation,password,profile_image)VALUES
         ('" . $entity->getName() . "','" . $entity->getEmail() . "','" . $entity->getDob() . "','" . $entity->getGender() . "',
         '" . $entity->getBlood() . "','" . $entity->getAddress() . "','" . $entity->getContact() . "',
@@ -31,6 +27,15 @@ class Teacher_repo
             echo "your id is:" . $id;
         } else {
             echo "INSERT ERROR";
+            //return null;
+        }
+        $type = "teacher";
+        $sql2 = "INSERT INTO login_type (id,email,password,type)VALUES('" . $id . "','" . $entity->getEmail() . "', '" . $entity->getPassword() . "','" . $type . "' ) ";
+        $result2 = $this->db->executeQuery($sql2);
+        if ($result2 > 0) {
+            echo "your login_type id is ready";
+        } else {
+            echo "INSERT ERROR from login_type";
             //return null;
         }
     }

@@ -11,7 +11,7 @@ class DataAccess
     function executeQuery($query)
     {
         $result = $this->conn->query($query);
-        if ($result > 0) {
+        if ($result != null) {
             return $result;
         } else {
             //return null;

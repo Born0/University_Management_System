@@ -188,6 +188,6 @@ if (isset($_POST['submit'])) {
         $t_repo = new Teacher_repo();
         $t_repo->Insert($teacher);
     } else {
-        $db_error = "Database Error!";
+        $db_error = "Data insert Error";
     }
 }

@@ -3,6 +3,5 @@ session_start();
 
 if(session_destroy()) // Destroying All Sessions
 {
-header("Location: ../Forms/Teacher_Reg.php"); // Redirecting To Home Page
+header("Location: ../Forms/Login.php"); // Redirecting To Home Page
 }
-?>
