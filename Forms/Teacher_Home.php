@@ -9,7 +9,7 @@ if (empty($_SESSION["email"])) {
 include('../control/Home_Control.php');
 
 $section = "Teacher_Section.php";
-$view_student = "Teacher_View_Student_profile.php";
+$view_student = "Teacher_View_Student.php";
 $profile = "Teacher_Profile.php";
 ?>
 
