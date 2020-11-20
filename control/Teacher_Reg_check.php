@@ -1,7 +1,7 @@
 <?php
 include('../Entity/Teacher_Entity.php');
 include('../Repository/Teacher_repo.php');
-session_start();
+
 $teacher = new Teacher();
 $error_name = $error_email = $error_dob = $error_gender = $error_blood = $error_contact = $error_address = $error_religion = $error_joining_year = $error_dept = "";
 $error_designation = $error_working_experience = $error_salary = $error_password = $error_image = "";

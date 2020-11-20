@@ -3,7 +3,11 @@
 
 <body>
     <?php
+    session_start();
     include('Teacher_home.php');
+    if (empty($_SESSION["email"])) {
+        header("Location: Login.php");
+    }
     //include('Student_profile.php');    -----> from student 
     ?>
     <input type="text" name="search" placeholder="student id or email">

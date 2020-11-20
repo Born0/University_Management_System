@@ -55,7 +55,7 @@ class Teacher_repo
                 $entity->setEmail($row["email"]);
                 $entity->setDob($row["dob"]);
                 $entity->setGender($row["gender"]);
-                $entity->getBlood($row["blood_group"]);
+                $entity->setBlood($row["blood_group"]);
                 $entity->setAddress($row["address"]);
                 $entity->setContact($row["contact_number"]);
                 $entity->setReligion($row["religion"]);
@@ -63,6 +63,7 @@ class Teacher_repo
                 $entity->setSalary($row["salary"]);
                 $entity->setDept($row["department"]);
                 $entity->setDesignation($row["designation"]);
+                $entity->setWorking_Experience($row["working_experience"]);
                 $entity->setPassword($row["password"]);
                 $entity->setImage($row["profile_image"]);
                 return $entity;

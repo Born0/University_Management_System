@@ -2,11 +2,15 @@
 <html lang="en">
 
 <?php
+session_start();
+if (empty($_SESSION["email"])) {
+    header("Location: Login.php");
+}
 include('../control/Home_Control.php');
 
 $section = "Teacher_Section.php";
 $view_student = "Teacher_View_Student_profile.php";
-$profile = "";
+$profile = "Teacher_Profile.php";
 ?>
 
 <head>

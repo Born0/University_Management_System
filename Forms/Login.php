@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../control/Login_check.php');
 
 ?>

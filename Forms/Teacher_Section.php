@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+session_start();
 include('Teacher_home.php');
+include('../control/Teacher_Section_Control.php');
+if (empty($_SESSION["email"])) {
+    header("Location: Login.php");
+}
+
 ?>
 
 <body>

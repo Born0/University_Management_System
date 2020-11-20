@@ -9,6 +9,10 @@
 <body>
 
     <?php
+    session_start();
+    if (empty($_SESSION["email"])) {
+        header("Location: Login.php");
+    }
     include('../control/Teacher_Reg_check.php');
     ?>
 

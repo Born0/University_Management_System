@@ -1,7 +1,6 @@
 <?php
 include('../Entity/Login_Entity.php');
 include('../Repository/Credential_repo.php');
-session_start();
 
 $login = new Login();
 
@@ -31,8 +30,11 @@ if (isset($_POST['submit'])) {
         $entity = $cred->Get($login);
         if (isset($entity)) {
             $_SESSION["email"] = $entity->getEmail();
+            $_SESSION["id"] = $entity->getId();
             $_SESSION["UserType"] = $entity->getType();
-            header("Refresh:0;url= Teacher_Home.php");
+            if ($entity->getType() == 'teacher') {
+                header("Refresh:0;url= Teacher_Home.php");
+            }
         } else {
             echo "No data returned";
         }
