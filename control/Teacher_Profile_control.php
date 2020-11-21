@@ -1,6 +1,6 @@
 <?php
-include('../Entity/Teacher_Entity.php');
-include('../Repository/Teacher_repo.php');
+//include('../Entity/Teacher_Entity.php');
+//include('../Repository/Teacher_repo.php');
 
 $teacher = new Teacher();
 $teacher->setEmail(($_SESSION["email"]));

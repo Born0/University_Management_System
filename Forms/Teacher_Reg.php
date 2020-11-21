@@ -10,9 +10,9 @@
 
     <?php
     session_start();
-    if (empty($_SESSION["email"])) {
-        header("Location: Login.php");
-    }
+    // if (empty($_SESSION["email"])) {
+    //     header("Location: Login.php");
+    // }
     include('../control/Teacher_Reg_check.php');
     ?>
 
@@ -85,7 +85,7 @@
                         <select name="dept" id="dept">
                             <option value="CS">CS</option>
                             <option value="EEE">EEE</option>
-                            <option value="Matd">Matd</option>
+                            <option value="Matd">Math</option>
                             <option value="Englisg">English</option>
                         </select> <?php echo $error_dept ?>
                     </td>

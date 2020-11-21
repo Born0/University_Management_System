@@ -14,11 +14,11 @@ class Teacher_repo
     function Insert(Teacher $entity)
     {
 
-        $sql = "INSERT INTO teacher(t_name,email,dob,gender,blood_group,address,contact_number,religion,joining_year,salary,department,designation,password,profile_image)VALUES
+        $sql = "INSERT INTO teacher(t_name,email,dob,gender,blood_group,address,contact_number,religion,joining_year,salary,department,designation,working_experience,password,profile_image)VALUES
         ('" . $entity->getName() . "','" . $entity->getEmail() . "','" . $entity->getDob() . "','" . $entity->getGender() . "',
         '" . $entity->getBlood() . "','" . $entity->getAddress() . "','" . $entity->getContact() . "',
         '" . $entity->getReligion() . "','" . $entity->getJoinig_year() . "','" . $entity->getSalary() . "',
-        '" . $entity->getDept() . "','" . $entity->getDesignation() . "','" . $entity->getPassword() . "','" . $entity->getImage() . "')";
+        '" . $entity->getDept() . "','" . $entity->getDesignation() . "','" . $entity->getWorking_Experience() . "'  ,  '" . $entity->getPassword() . "','" . $entity->getImage() . "')";
 
         $result = $this->db->executeQuery($sql);
         if ($result > 0) {

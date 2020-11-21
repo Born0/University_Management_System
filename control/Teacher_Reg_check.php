@@ -128,27 +128,36 @@ if (isset($_POST['submit'])) {
             $teacher->setDesignation($designation);
         }
     }
-
+    ///////////
+    if ($_REQUEST["working_experience"] == 0) {
+        $_REQUEST["working_experience"] = "NoExperience";
+    }
+    /////////////
     if (empty($_REQUEST["working_experience"])) {
         $error_working_experience = "  Invalid working_experience";
         $flag = false;
     } else {
         $working_experience = $_REQUEST["working_experience"];
-        if (!preg_match("/^[0-9 ]*$/", $working_experience)) {
-            $error_working_experience = "Only Number allowed";
+        if (!ctype_alnum($working_experience)) {
+            $error_working_experience = "Only Number allowed in work exp";
             $flag = false;
         } else {
             $teacher->setWorking_Experience($working_experience);
         }
     }
 
+    /////////////
+    if ($_REQUEST["salary"] == 0) {
+        $_REQUEST["salary"] = "NoSalary";
+    }
+    //////////
     if (empty($_REQUEST["salary"])) {
         $error_salary = "  Invalid salary";
         $flag = false;
     } else {
         $salary = $_REQUEST["salary"];
-        if (!preg_match("/^[0-9 ]*$/", $salary)) {
-            $error_salary = "Only Number allowed";
+        if (!ctype_alnum($salary)) {
+            $error_salary = "Only Number allowed in Salary";
             $flag = false;
         } else {
             $teacher->setSalary($salary);

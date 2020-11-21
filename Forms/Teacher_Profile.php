@@ -2,9 +2,8 @@
 <html lang="en">
 
 <?php
-
-session_start();
 include('Teacher_home.php');
+//session_start();
 include('../control/Teacher_Profile_control.php');
 if (empty($_SESSION["email"])) {
     header("Location: Login.php");
@@ -64,16 +63,24 @@ if (empty($_SESSION["email"])) {
                 </tr>
                 <tr>
                     <td>Working Experience :</td>
-                    <td><?php echo $entity->getWorking_Experience(); ?> Years</td>
+                    <td><?php if ($entity->getWorking_Experience() == "NoExperience") {
+                            echo '0';
+                        } else {
+                            echo $entity->getWorking_Experience();
+                        } ?> Years</td>
                 </tr>
                 <tr>
                     <td>Salary :</td>
-                    <td><?php echo $entity->getSalary(); ?> </td>
+                    <td><?php if ($entity->getSalary() == "NoSalary") {
+                            echo '0';
+                        } else {
+                            echo $entity->getSalary();
+                        } ?> </td>
                 </tr>
                 <tr>
                     <td> Profile image :</td>
                     <td>
-                        <img src="<?PHP echo $entity->getImage(); ?>" alt="Profile Image" style="width:100px;height:100px;"> </td>
+                        <img src="<?PHP echo $entity->getImage(); ?>" alt="Profile Image" width="100" height="100"> </td>
                 </tr>
                 <tr>
                     <td><br><br></td>
@@ -81,6 +88,8 @@ if (empty($_SESSION["email"])) {
             </table>
         </form>
     </fieldset>
+    <br><br>
+    <?php include '../Common/footer.php'; ?>
 </body>
 
 </html>

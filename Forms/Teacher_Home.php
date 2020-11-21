@@ -7,9 +7,7 @@ session_start();
 if (empty($_SESSION["email"])) {
     header("Location: Login.php");
 }
-include('../control/Home_Control.php');
-
-
+include('../control/Teacher_Home_Control.php');
 $section = "Teacher_Section.php";
 $view_student = "Teacher_View_Student.php";
 $profile = "Teacher_Profile.php";
@@ -24,6 +22,7 @@ $profile = "Teacher_Profile.php";
 </head>
 
 <body>
+    <h1>Hello <?php echo $t_name; ?></h1>
     <Table style="width: 100%;">
         <tr>
             <th><a href="<?php echo $section ?>">
@@ -37,6 +36,10 @@ $profile = "Teacher_Profile.php";
                 </a></th>
         </tr>
     </Table>
+
+
+
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-include('../Entity/Teacher_Entity.php');
+//include('../Entity/Teacher_Entity.php');
 //include('../Entity/Section_Entity.php');
 //include('../Repository/Section_repo.php');
 

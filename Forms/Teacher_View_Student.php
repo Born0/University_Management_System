@@ -3,8 +3,8 @@
 
 <body>
     <?php
-    session_start();
     include('Teacher_home.php');
+    //session_start();
     if (empty($_SESSION["email"])) {
         header("Location: Login.php");
     }
@@ -53,6 +53,8 @@
 
         </table>
     </fieldset>
+    <br><br>
+    <?php include '../Common/footer.php'; ?>
 </body>
 
 </html>

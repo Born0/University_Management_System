@@ -4,6 +4,7 @@
 <head>
     <?php
     include('Teacher_Home.php');
+    //session_start();
     ?>
     <h1>Section: "[section name]" </h1>
 </head>
@@ -30,6 +31,8 @@
 
         </table>
     </fieldset>
+    <br><br>
+    <?php include '../Common/footer.php'; ?>
 </body>
 
 </html>
