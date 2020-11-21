@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <?php
+    include('Teacher_Home.php');
+    ?>
     <h1>Section: "[section name]" </h1>
 </head>
 

@@ -33,7 +33,7 @@ class Teacher_repo
         $sql2 = "INSERT INTO login_type (id,email,password,type)VALUES('" . $id . "','" . $entity->getEmail() . "', '" . $entity->getPassword() . "','" . $type . "' ) ";
         $result2 = $this->db->executeQuery($sql2);
         if ($result2 > 0) {
-            echo "your login_type id is ready";
+            echo " <br>your are ready to login";
         } else {
             echo "INSERT ERROR from login_type";
             //return null;

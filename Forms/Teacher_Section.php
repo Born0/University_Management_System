@@ -11,79 +11,81 @@ if (empty($_SESSION["email"])) {
 ?>
 
 <body>
-    <table>
-        <tr>
-            <table border="1" rules=NONE frame=box>
-                <tr>
-                    <td>Section Name</td>
-                    <td></td>
+    <form method="POST" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <table border="1" rules=NONE frame=box>
+                    <tr>
+                        <td>Section Name</td>
+                        <td></td>
 
-                    <td>Class Time</td>
-                </tr>
-                <tr>
-                    <td></td>
+                        <td>Class Time</td>
+                    </tr>
+                    <tr>
+                        <td></td>
 
-                    <td><input type="submit" name=Details value="Details"></td>
-                    <td></td>
-                </tr>
-            </table>
-        </tr>
-        <tr>
-        </tr>
+                        <td><input type="submit" name=Details value="Details"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </tr>
+            <tr>
+            </tr>
 
-        <tr>
-            <table border="1" rules=NONE frame=box>
-                <tr>
-                    <td>Section Name</td>
-                    <td></td>
+            <tr>
+                <table border="1" rules=NONE frame=box>
+                    <tr>
+                        <td>Section Name</td>
+                        <td></td>
 
-                    <td>Class Time</td>
-                </tr>
-                <tr>
-                    <td></td>
+                        <td>Class Time</td>
+                    </tr>
+                    <tr>
+                        <td></td>
 
-                    <td><input type="submit" name=Details value="Details"></td>
-                    <td></td>
-                </tr>
-            </table>
-        </tr>
+                        <td><input type="submit" name=Details value="Details"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </tr>
 
-        <tr>
-            <table border="1" rules=NONE frame=box>
-                <tr>
-                    <td>Section Name</td>
-                    <td></td>
+            <tr>
+                <table border="1" rules=NONE frame=box>
+                    <tr>
+                        <td>Section Name</td>
+                        <td></td>
 
-                    <td>Class Time</td>
-                </tr>
-                <tr>
-                    <td></td>
+                        <td>Class Time</td>
+                    </tr>
+                    <tr>
+                        <td></td>
 
-                    <td><input type="submit" name=Details value="Details"></td>
-                    <td></td>
-                </tr>
-            </table>
-        </tr>
+                        <td><input type="submit" name=Details value="Details"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </tr>
 
-        <tr>
-            <table border="1" rules=NONE frame=box>
-                <tr>
-                    <td>Section Name</td>
-                    <td></td>
+            <tr>
+                <table border="1" rules=NONE frame=box>
+                    <tr>
+                        <td>Section Name</td>
+                        <td></td>
 
-                    <td>Class Time</td>
-                </tr>
-                <tr>
-                    <td></td>
+                        <td>Class Time</td>
+                    </tr>
+                    <tr>
+                        <td></td>
 
-                    <td><input type="submit" name=Details value="Details"></td>
-                    <td></td>
-                </tr>
-            </table>
-        </tr>
+                        <td><input type="submit" name=Details value="Details"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </tr>
 
 
-    </table>
+        </table>
+    </form>
 </body>
 
 </html>
