@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
                 header("Refresh:0;url= Teacher_Home.php");
             }
         } else {
-            echo "No data returned";
+            //echo "No data returned";
         }
     } else {
         $db_error = "Data insert Error";
