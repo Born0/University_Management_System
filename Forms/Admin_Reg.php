@@ -50,31 +50,45 @@
 		  }
 			
 			
+			$targetDir="Files/";
+			if(isset($_FILES["fileup"]["name"]))
+			{
+				$targetFile=$targetDir . basename($_FILES["fileup"]["name"]);
 			
+			if (move_uploaded_file($_FILES["fileup"]["tmp_name"], $targetFile)) {
+				echo "The file ". basename( $_FILES["fileup"]["name"]). " has been uploaded.";
+			} else {
+				echo "Sorry, there was an error uploading your file.";
+			}
+			}
+			
+
 		?>
+
+
 
 		<h2 align="center">Admin Regisstration Form</h2>
 
-			<form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
+			<form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post" enctype="multipart/form-data">
 
-				 <table style="width:20%" align="center">
+				 <table style="width:25%" align="center">
 					  <tr>
 					   <td> <label>Name</label></td>
 					   <td> : <input type="text" id="name" name="name" align="center" value="<?php echo $name;?>"><br></td>
 					  </tr>
 					  
 					  <tr>
-						<td><label>Email:</label></td>
+						<td><label>Email</label></td>
 						<td>: <input type="text" id="mail" name="mail" value="<?php echo $mail;?>"></td><br>
 					  </tr>
 					  
 					   <tr>
-						<td><label>DOB:</label></td>
+						<td><label>DOB</label></td>
 						<td>: <input style="font-size: 1rem" type="date" id="DOB" name="DOB" value="<?php echo $dob;?>"><br></td>
 					  </tr>
 
 						<tr>
-							<td><label>Gender:</label></td>
+							<td><label>Gender</label></td>
 							<td>: 
 								<input type="radio" id="maleRadio" name="gender" value="m" checked>
 								<label>Male</label>
@@ -83,7 +97,7 @@
 							</td>
 					  </tr>
 					  <tr>
-						<td> <label for="bloodtype">BloodGroup:</label></td>
+						<td> <label for="bloodtype">BloodGroup</label></td>
 						<td>: 
 							<select name="bloodtype" id="bloodtype" >
 							<option value="A+" >A+</option>
@@ -99,34 +113,39 @@
 					   </tr>
 
 						<tr>
-							<td><label>Contact Number:</label></td>
+							<td><label>Contact Number</label></td>
 							<td>: <input type="text" id="number" name="number" value="<?php echo $number;?>"></td>
 						</tr>
 					  
 					  
 						<tr>
-							<td> <label>Address:</label></td>
+							<td> <label>Address</label></td>
 							<td>: <input type="text" id="address" name="address" value="<?php echo $address;?>"></td>
 						</tr> 
 					  
 					  
 						<tr>
-							<td><label>Religion:</label></td>
+							<td><label>Religion</label></td>
 							<td>: <input type="text" id="religion" name="religion" value="<?php echo $religion;?>"><br></td>
 						</tr>
 					  
 						<tr>
-							<td><label>Joining Date:</label></td>
+							<td><label>Joining Date</label></td>
 							<td>: <input style="font-size: 1rem" type="date" id="joinDate" name="joinDate" value="<?php echo $joinDate;?>"></td>
 					   </tr> 
 					  
 					   <tr>
-							<td><label>Salary:</label></td>
+							<td><label>Salary</label></td>
 							<td>: <input type="text" id="salary" name="salary" value="<?php echo $salary;?>"></td>
 					   </tr>  
 					   <tr>
-							<td><label>Password:</label></td>
+							<td><label>Password</label></td>
 							<td>: <input type="text" id="password" name="password" value="<?php echo $password;?>"></td>
+					   </tr> 
+					   
+					   <tr>
+							<td><label>Profile Picture</label></td>
+							<td><input type="file" id="fileup" name="fileup" ></td>
 					   </tr> 
 				  
 				  
