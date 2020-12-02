@@ -39,7 +39,7 @@
                 <td> <input type="text" name="Gained"> </td>
                 <td> <input type="text" name="Grade"> </td>
                 <td> <input type="text" name="Effect"> </td>
-                <td><input type="submit" name=final value="lock grade"></td>
+                <td><input type="submit" name=final value="Lock grade"></td>
             </tr>
             <tr>
                 <td>Total Grade</td>

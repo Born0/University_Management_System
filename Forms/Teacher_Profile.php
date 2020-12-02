@@ -13,7 +13,7 @@ if (empty($_SESSION["email"])) {
 <body>
     <fieldset style="width:40%">
         <legend><b>Teacher Profile</b></legend>
-        <form method="POST" enctype="multipart/form-data">
+        <form action="Teacher_Profile_Update.php" method="POST" enctype="multipart/form-data">
             <table align=center>
                 <tr>
                     <td>Name :</td>
@@ -84,6 +84,12 @@ if (empty($_SESSION["email"])) {
                 </tr>
                 <tr>
                     <td><br><br></td>
+                    <td>
+                    <td>
+                        <input type="submit" name=edit value="Edit profile">
+
+                    </td>
+                    </td>
                 </tr>
             </table>
         </form>

@@ -14,6 +14,12 @@ class Person
     private $blood;
     private $image;
 
+    function __construct()
+    {
+        $this->email = " cons email";
+        $this->password = " cons pass";
+    }
+
     function setName($name)
     {
         $this->name = $name;

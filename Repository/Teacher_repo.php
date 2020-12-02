@@ -14,11 +14,11 @@ class Teacher_repo
     function Insert(Teacher $entity)
     {
 
-        $sql = "INSERT INTO teacher(t_name,email,dob,gender,blood_group,address,contact_number,religion,joining_year,salary,department,designation,working_experience,password,profile_image)VALUES
-        ('" . $entity->getName() . "','" . $entity->getEmail() . "','" . $entity->getDob() . "','" . $entity->getGender() . "',
-        '" . $entity->getBlood() . "','" . $entity->getAddress() . "','" . $entity->getContact() . "',
-        '" . $entity->getReligion() . "','" . $entity->getJoinig_year() . "','" . $entity->getSalary() . "',
-        '" . $entity->getDept() . "','" . $entity->getDesignation() . "','" . $entity->getWorking_Experience() . "'  ,  '" . $entity->getPassword() . "','" . $entity->getImage() . "')";
+        $sql = "INSERT INTO teacher(t_name,email,dob,gender,blood_group,address,contact_number,religion,joining_year,salary,department,
+        designation,working_experience,password,profile_image)VALUES('" . $entity->getName() . "','" . $entity->getEmail() . "','" . $entity->getDob() . "',
+        '" . $entity->getGender() . "','" . $entity->getBlood() . "','" . $entity->getAddress() . "','" . $entity->getContact() . "',
+        '" . $entity->getReligion() . "','" . $entity->getJoinig_year() . "','" . $entity->getSalary() . "','" . $entity->getDept() . "',
+        '" . $entity->getDesignation() . "','" . $entity->getWorking_Experience() . "'  ,  '" . $entity->getPassword() . "','" . $entity->getImage() . "')";
 
         $result = $this->db->executeQuery($sql);
         if ($result > 0) {
@@ -30,10 +30,16 @@ class Teacher_repo
             //return null;
         }
         $type = "teacher";
-        $sql2 = "INSERT INTO login_type (id,email,password,type)VALUES('" . $id . "','" . $entity->getEmail() . "', '" . $entity->getPassword() . "','" . $type . "' ) ";
-        $result2 = $this->db->executeQuery($sql2);
-        if ($result2 > 0) {
-            echo " <br>your are ready to login";
+        $sql2 = "INSERT INTO login_type (id,email,password,type)VALUES(?,?,?,?) ";
+        $stm = $this->db->conn->prepare($sql2);
+
+        $stm->bind_param("isss",  $id, $email, $password, $type);
+        $email = $entity->getEmail();
+        $password = $entity->getPassword();
+        $result2 = $stm->execute();
+        if ($result2) {
+            echo " <br>you are ready to login";
+            $stm->close();
         } else {
             echo "INSERT ERROR from login_type";
             //return null;
@@ -74,6 +80,14 @@ class Teacher_repo
     }
     function Update(Teacher $entity)
     {
+        $sql3 = "UPDATE teacher SET  t_name='" . $entity->getName() . "'  WHERE email='" . $entity->getEmail() . "' ";
+
+        $result3 = $this->db->executeQuery($sql3);
+        if ($result3) {
+            echo "Profile Updated";
+        } else {
+            echo  "Profile Update ERROR !!";
+        }
     }
     function Delete(Teacher $entity)
     {

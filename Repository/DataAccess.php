@@ -15,6 +15,8 @@ class DataAccess
             return $result;
         } else {
             //return null;
+            echo "Error from DataAcces Exe";
+            echo $result;
         }
     }
 
