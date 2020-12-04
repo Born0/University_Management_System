@@ -15,6 +15,9 @@ if (isset($_POST['refresh'])) {
 
 if (isset($_POST['update'])) {
 
+    $teacher->setId($_SESSION["id"]);
+    $teacher->setEmail($_SESSION["email"]);
+
     if (empty($_REQUEST["name"])) {
         $error_name = "  Invalid name";
     } else {
@@ -139,7 +142,10 @@ if (isset($_POST['update'])) {
 
     if ($flag) {
         $t_repo = new Teacher_repo();
-        $t_repo->Update($teacher);
+        $result = $t_repo->Update($teacher);
+        if ($result) {
+            header("Refresh:2; url=Teacher_Profile.php");
+        }
     } else {
         $db_error = "Data Update Error";
     }

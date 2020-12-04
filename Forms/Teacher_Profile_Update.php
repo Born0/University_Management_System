@@ -9,6 +9,9 @@ include('../control/Teacher_Profile_Update_Control.php');
 if (empty($_SESSION["email"])) {
     header("Location: Login.php");
 }
+$_SESSION["id"] = $entity->getId();
+$_SESSION["email"] = $entity->getEmail();
+
 ?>
 
 <body>
@@ -18,7 +21,7 @@ if (empty($_SESSION["email"])) {
             <table align=center>
                 <tr>
                     <td>ID :</td>
-                    <td> : <input type="text" name="name" disabled value=<?php echo $entity->getId(); ?> </td> </tr> <tr>
+                    <td> : <input type="text" name="id" disabled value=<?php echo $entity->getId(); ?> </td> </tr> <tr>
                     <td>Name :</td>
                     <td> : <input type="text" name="name" value=<?php echo $entity->getName(); ?> </td> </tr> <tr>
                     <td>Email :</td>

@@ -80,11 +80,15 @@ class Teacher_repo
     }
     function Update(Teacher $entity)
     {
-        $sql3 = "UPDATE teacher SET  t_name='" . $entity->getName() . "'  WHERE email='" . $entity->getEmail() . "' ";
+        $sql3 = "UPDATE teacher SET  t_name='" . $entity->getName() . "' ,blood_group='" . $entity->getBlood() . "',address='" . $entity->getAddress() . "',
+        contact_number='" . $entity->getContact() . "',religion='" . $entity->getReligion() . "',department='" . $entity->getDept() . "',
+        designation='" . $entity->getDesignation() . "',working_experience='" . $entity->getWorking_Experience() . "',
+        password='" . $entity->getPassword() . "' WHERE  t_id = '" . $entity->getId() . "'";
 
         $result3 = $this->db->executeQuery($sql3);
         if ($result3) {
             echo "Profile Updated";
+            return true;
         } else {
             echo  "Profile Update ERROR !!";
         }
