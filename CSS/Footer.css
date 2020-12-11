@@ -1,0 +1,11 @@
+.footer h2 {
+  position: static;
+  padding: 5px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin-bottom: auto;
+}

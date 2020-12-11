@@ -6,9 +6,14 @@ include('../control/Login_check.php');
 <!DOCTYPE html>
 <html>
 
-<body>
+<head>
+    <link rel="stylesheet" href="../CSS/Teacher_Home.css">
+</head>
 
-    <h2>Login</h2>
+<body>
+    <div class="header">
+        <h1>Web University Bangladesh </h1>
+    </div>
 
     <form action="" method="post">
 
@@ -30,6 +35,7 @@ include('../control/Login_check.php');
     </form>
 
     <br>
+    <?php include '../Common/footer.php'; ?>
 </body>
 
 </html>

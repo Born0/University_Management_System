@@ -58,6 +58,7 @@ $_SESSION["email"] = $entity->getEmail();
             </table>
         </form>
     </fieldset>
+    <br><br><?php include '../Common/footer.php'; ?>
 </body>
 
 </html>

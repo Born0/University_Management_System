@@ -1,6 +1,6 @@
 <?php
-include('../Entity/Teacher_Entity.php');
-include('../Repository/Teacher_repo.php');
+//include('../Entity/Teacher_Entity.php');
+//include('../Repository/Teacher_repo.php');
 
 $teacher = new Teacher();
 $error_name = $error_email = $error_dob = $error_gender = $error_blood = $error_contact = $error_address = $error_religion = $error_joining_year = $error_dept = "";
@@ -195,8 +195,13 @@ if (isset($_POST['submit'])) {
 
     if ($flag) {
         $t_repo = new Teacher_repo();
-        $t_repo->Insert($teacher);
+        $res = $t_repo->Insert($teacher);
+        if ($res != null) {
+            echo  "you are ready to login <br> your id is:" . $res;
+        } else {
+            echo "There's a problem registering new Teacher. checkyour email address";
+        }
     } else {
-        $db_error = "Data insert Error";
+        $db_error = "Choose between options";
     }
 }

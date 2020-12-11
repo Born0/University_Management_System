@@ -147,7 +147,7 @@
 	</fieldset>
 
 	<br><br>
-	<?php include 'footer.php'; ?>
+	<?php include '../Common/footer.php'; ?>
 </body>
 
 </html>
