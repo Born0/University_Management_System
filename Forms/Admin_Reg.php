@@ -1,75 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<?php
 		
-			$name=$mail=$dob=$gender=$bloodtype=$number=$address=$religion=$joinDate=$salary=$password="";
-			$error="";
-			if($_SERVER["REQUEST_METHOD"]=="POST")
-			{
-			$name=$_REQUEST["name"];
-			$mail=$_REQUEST["mail"];
-			$dob=$_REQUEST["DOB"];
-			$gender=$_REQUEST["gender"];
-			$bloodtype=$_REQUEST["bloodtype"];
-			$number=$_REQUEST["number"];
-			$address=$_REQUEST["address"];
-			$religion=$_REQUEST["religion"];
-			$joinDate=$_REQUEST["joinDate"];
-			$salary=$_REQUEST["salary"];
-			$password=$_REQUEST["password"];
-			
-			if(formNotFilled())
-				$error="All the information must be provided before submitting";
-			
-			/*elseif(empty($mail))
-				$error="Please provide all the info";
-			elseif(empty($dob))
-				$error="Please provide all the info";
-			elseif(empty($gender))
-				$error="Please provide all the info";
-			elseif(empty($bloodtype))
-				$error="Please provide all the info";
-			elseif(empty($number))
-				$error="Please provide all the info";
-			elseif(empty($address))
-				$error="Please provide all the info";
-			elseif(empty($religion))
-				$error="Please provide all the info";
-			elseif(empty($joinDate))
-				$error="Please provide all the info";
-			elseif(empty($salary))
-				$error="Please provide all the info";*/
-			}
-		  function formNotFilled()
-		  {
-			  global $name,$mail,$dob,$gender,$bloodtype,$number,$address,$religion,$joinDate,$salary,$password;
-			  if($name==""||$mail==""||$dob==""||$gender==""||$bloodtype==""||$number==""||$address==""||$religion==""||$joinDate==""||$salary==""||$password=="")
-				  return true;
-			  else return false;
-		  }
-			
-			
-			$targetDir="Files/";
-			if(isset($_FILES["fileup"]["name"]))
-			{
-				$targetFile=$targetDir . basename($_FILES["fileup"]["name"]);
-			
-			if (move_uploaded_file($_FILES["fileup"]["tmp_name"], $targetFile)) {
-				echo "The file ". basename( $_FILES["fileup"]["name"]). " has been uploaded.";
-			} else {
-				echo "Sorry, there was an error uploading your file.";
-			}
-			}
-			
+		<?php
+
+		include("../control/AdminRegCheck.php");
 
 		?>
-
-
-
 		<h2 align="center">Admin Regisstration Form</h2>
 
-			<form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post" enctype="multipart/form-data">
+			<form  method="post" enctype="multipart/form-data">
 
 				 <table style="width:25%" align="center">
 					  <tr>
