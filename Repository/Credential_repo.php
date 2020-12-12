@@ -12,7 +12,8 @@ class Credential
     function Get(Login  $entity)
     {
 
-        $sql2 = "SELECT * FROM login_type WHERE password= '" . $entity->getPassword() . "' AND  email='" . $entity->getUsername() . "' OR id = '" . $entity->getUsername() . "' ";
+        $sql2 = "SELECT * FROM login_type WHERE  email='" . $entity->getUsername() . "' OR id = '" . $entity->getUsername() . "' 
+                                            AND password= '" . $entity->getPassword() . "' ";
         $result = $this->db->ReaderQuery($sql2);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -22,7 +23,7 @@ class Credential
                 return $entity;
             }
         } else {
-            echo "No such user found!";
+            return null;
         }
     }
 }

@@ -10,92 +10,78 @@ if (empty($_SESSION["email"])) {
 }
 ?>
 
+<head>
+    <link rel="stylesheet" href="../CSS/Teacher_Reg.css">
+</head>
+
 <body>
-    <fieldset style="width:40%">
-        <legend><b>Teacher Profile</b></legend>
-        <form action="Teacher_Profile_Update.php" method="POST" enctype="multipart/form-data">
-            <table align=center>
-                <tr>
-                    <td>Name :</td>
-                    <td> <?php echo  $entity->getName(); ?> </td>
-                </tr>
-                <tr>
-                    <td>Email :</td>
-                    <td><?php echo $entity->getEmail(); ?> </td>
-                </tr>
-                <tr>
-                    <td> Date of Birth: </td>
 
-                    <td><?php echo $entity->getDob(); ?></td>
+    <form action="Teacher_Profile_Update.php" method="POST" enctype="multipart/form-data">
+        <div class="container">
+            <ul>
+                <li><label><img src="<?PHP echo $entity->getImage(); ?>" alt="Profile Image" width="100" height="100"> </label></li>
+                <li>
+                    <label> Name : </label>
+                    <label> <?php echo  $entity->getName(); ?> </label>
+                </li>
 
-                </tr>
-                <tr>
-                    <td> Gender :</td>
-                    <td><?php echo $entity->getGender(); ?> </td>
-                </tr>
-                <tr>
-                    <td>Blood Group:</td>
-                    <td><?php echo $entity->getBlood(); ?> </td>
-                </tr>
-                <tr>
-                    <td>Contact Number :</td>
-                    <td><?php echo $entity->getContact(); ?> </td>
-                </tr>
-                <tr>
-                    <td>Address :</td>
-                    <td><?php echo $entity->getAddress(); ?> </td>
-                </tr>
-                <tr>
-                    <td>Religion :</td>
-                    <td><?php echo $entity->getReligion();  ?></td>
-                </tr>
-                <tr>
-                    <td>Joining Year :</td>
-                    <td><?php echo $entity->getJoinig_year(); ?> </td>
-                </tr>
-                <tr>
-                    <td>Department:</td>
-                    <td><?php echo $entity->getDept();  ?> </td>
-                </tr>
-                <tr>
-                    <td>Designation :</td>
-                    <td><?php echo $entity->getDesignation(); ?></td>
-                </tr>
-                <tr>
-                    <td>Working Experience :</td>
-                    <td><?php if ($entity->getWorking_Experience() == "NoExperience") {
-                            echo '0';
-                        } else {
-                            echo $entity->getWorking_Experience();
-                        } ?> Years</td>
-                </tr>
-                <tr>
-                    <td>Salary :</td>
-                    <td><?php if ($entity->getSalary() == "NoSalary") {
-                            echo '0';
-                        } else {
-                            echo $entity->getSalary();
-                        } ?> </td>
-                </tr>
-                <tr>
-                    <td> Profile image :</td>
-                    <td>
-                        <img src="<?PHP echo $entity->getImage(); ?>" alt="Profile Image" width="100" height="100"> </td>
-                </tr>
-                <tr>
-                    <td><br><br></td>
-                    <td>
-                    <td>
-                        <input type="submit" name=edit value="Edit profile">
+                <li>
+                    <label> Email : </label>
+                    <label> <?php echo $entity->getEmail(); ?> </label>
+                </li>
 
-                    </td>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </fieldset>
+                <li><label> Date of Birth: </label>
+                    <label> <?php echo $entity->getDob(); ?> </label>
+                </li>
+
+
+                <li><label> Gender : </label>
+                    <label> <?php echo $entity->getGender(); ?> </label>
+                </li>
+                <li> <label> Blood Group: </label>
+                    <label> <?php echo $entity->getBlood(); ?> </label>
+                </li>
+                <li><label> Contact Number : </label>
+                    <label> <?php echo $entity->getContact(); ?> </label>
+                </li>
+                <li><label> Address : </label>
+                    <label> <?php echo $entity->getAddress(); ?> </label>
+                </li>
+                <li> <label> Religion : </label>
+                    <label> <?php echo $entity->getReligion();  ?> </label>
+                </li>
+                <li><label> Joining Year : </label>
+                    <label> <?php echo $entity->getJoinig_year(); ?> </label>
+                </li>
+                <li> <label> Department: </label>
+                    <label> <?php echo $entity->getDept();  ?> </label>
+                </li>
+                <li><label> Designation : </label>
+                    <label> <?php echo $entity->getDesignation(); ?> </label>
+                </li>
+                <li><label> Working Experience : </label>
+                    <label> <?php if ($entity->getWorking_Experience() == "NoExperience") {
+                                echo '0';
+                            } else {
+                                echo $entity->getWorking_Experience();
+                            } ?> Years </label>
+                </li>
+                <li><label> Salary : </label>
+                    <label> <?php if ($entity->getSalary() == "NoSalary") {
+                                echo '0';
+                            } else {
+                                echo $entity->getSalary();
+                            } ?> </label>
+                </li>
+            </ul>
+            <input type="submit" name=edit class="registerbtn" value="Edit profile">
+        </div>
+
+    </form>
+
     <br><br>
     <?php include '../Common/footer.php'; ?>
+
 </body>
 
 </html>

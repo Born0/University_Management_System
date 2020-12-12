@@ -6,6 +6,7 @@
   padding: 10px;
   text-align: left;
   background-color: #b6d3d1;
+  padding-bottom: 10%;
 }
 
 input[type="text"],
@@ -24,13 +25,8 @@ input[type="password"]:focus {
   outline: none;
 }
 
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
 .registerbtn {
-  background-color: #4caf50;
+  background-color: #356d69;
   color: white;
   padding: 5px 7px;
   margin: 8px 0;
@@ -38,6 +34,7 @@ hr {
   cursor: pointer;
   width: 10%;
   opacity: 0.9;
+  margin-left: 53%;
 }
 
 .registerbtn:hover {
@@ -60,4 +57,22 @@ select {
 }
 form {
   align-content: center;
+}
+
+.container ul li {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+  margin-left: 30%;
+}
+#img {
+  margin-left: 60%;
+  min-height: 70%;
+}
+.container ul {
+  margin-left: 0%;
+}
+
+#reg {
+  margin-left: 20%;
+  vertical-align: auto;
 }

@@ -45,13 +45,6 @@ $teacher_reg = "Teacher_Reg.php";
 
     </div>
 
-
-    <h3>Hello <?php echo $gender;
-                echo $t_name; ?>
-    </h3>
-
-
-
 </body>
 
 </html>

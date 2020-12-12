@@ -14,50 +14,54 @@ $_SESSION["email"] = $entity->getEmail();
 
 ?>
 
-<body>
-    <fieldset style="width:40%">
-        <legend><b>Teacher Profile</b></legend>
-        <form method="POST" enctype="multipart/form-data">
-            <table align=center>
-                <tr>
-                    <td>ID :</td>
-                    <td> : <input type="text" name="id" disabled value=<?php echo $entity->getId(); ?> </td> </tr> <tr>
-                    <td>Name :</td>
-                    <td> : <input type="text" name="name" value=<?php echo $entity->getName(); ?> </td> </tr> <tr>
-                    <td>Email :</td>
-                    <td>: <input type="text" name="email" disabled value=<?php echo $entity->getEmail(); ?> </td> </tr> <tr>
-                    <td>Blood Group:</td>
-                    <td>: <input type="text" name="blood" value=<?php echo $entity->getBlood(); ?> </td> </tr> <tr>
-                    <td>Contact Number :</td>
-                    <td>: <input type="text" name="contact" value=<?php echo $entity->getContact(); ?> </td> </tr> <tr>
-                    <td>Address :</td>
-                    <td>: <input type="text" name="address" value=<?php echo $entity->getAddress(); ?> </td> </tr> <tr>
-                    <td>Religion :</td>
-                    <td>: <input type="text" name="religion" value=<?php echo $entity->getReligion();  ?> </td> </tr> <tr>
-                    <td>Department:</td>
-                    <td>: <input type="text" name="dept" value=<?php echo $entity->getDept();  ?> </td> </tr> <tr>
-                    <td>Designation :</td>
-                    <td>: <input type="text" name="designation" value=<?php echo $entity->getDesignation(); ?> </td> </tr> <tr>
-                    <td>Working Experience :</td>
-                    <td>: <input type="text" name="working_experience" value=<?php if ($entity->getWorking_Experience() == "NoExperience") {
-                                                                                    echo '0';
-                                                                                } else {
-                                                                                    echo $entity->getWorking_Experience();
-                                                                                } ?> Years</td> </tr> <tr>
-                    <td>Salary :</td>
-                    <td>: <input type="text" name="salary" disabled value=<?php echo $entity->getSalary(); ?> </td> </tr> <tr>
-                    <td>Password :</td>
-                    <td>: <input type="text" name="password" value=<?php echo $entity->getPassword(); ?> </td> </tr> <tr>
-                <tr>
-                    <td><br><br></td>
-                    <td>
-                        <input type="submit" name=update value="Update profile">
+<head>
+    <link rel="stylesheet" href="../CSS/Teacher_Reg.css">
+</head>
 
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </fieldset>
+<body>
+
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="container">
+            <ul>
+
+                <li> <label>ID :</label>
+                    : <input type="text" name="id" disabled value=<?php echo $entity->getId(); ?>> </li>
+                <li> <label>Name :</label>
+                    : <input type="text" name="name" value=<?php echo $entity->getName(); ?>> </li>
+                <li> <label>Email :</label>
+                    : <input type="text" name="email" disabled value=<?php echo $entity->getEmail(); ?>></li>
+                <li> <label>Blood Group:</label>
+                    : <input type="text" name="blood" value=<?php echo $entity->getBlood(); ?>> </li>
+                <li> <label>Contact Number :</label>
+                    : <input type="text" name="contact" value=<?php echo $entity->getContact(); ?>> </li>
+                <li> <label>Address :</label>
+                    : <input type="text" name="address" value=<?php echo $entity->getAddress(); ?>> </li>
+                <li> <label>Religion :</label>
+                    : <input type="text" name="religion" value=<?php echo $entity->getReligion();  ?>></li>
+                <li> <label>Department:</label>
+                    : <input type="text" name="dept" value=<?php echo $entity->getDept();  ?>></li>
+                <li> <label>Designation :</label>
+                    : <input type="text" name="designation" value=<?php echo $entity->getDesignation(); ?> </li> <li> <label>Working Experience :</label>
+                    : <input type="text" name="working_experience" value=<?php if ($entity->getWorking_Experience() == "NoExperience") {
+                                                                                echo '0';
+                                                                            } else {
+                                                                                echo $entity->getWorking_Experience();
+                                                                            } ?>> Years</li>
+                <li> <label>Salary :</label>
+                    : <input type="text" name="salary" disabled value=<?php echo $entity->getSalary(); ?>> </li>
+                <li> <label>Password :</label>
+                    : <input type="text" name="password" value=<?php echo $entity->getPassword(); ?>> </li>
+                <li> <label><br><br></label>
+
+                    <input type="submit" class="registerbtn" name=update value="Update profile">
+
+                </li>
+
+            </ul>
+        </div>
+    </form>
+
     <br><br><?php include '../Common/footer.php'; ?>
 </body>
 

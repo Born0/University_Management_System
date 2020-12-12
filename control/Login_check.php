@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     if ($flag) {
         $cred = new Credential();
         $entity = $cred->Get($login);
-        if (isset($entity)) {
+        if ($entity != null) {
             $_SESSION["email"] = $entity->getEmail();
             $_SESSION["id"] = $entity->getId();
             $_SESSION["UserType"] = $entity->getType();
@@ -37,9 +37,9 @@ if (isset($_POST['submit'])) {
                 header("Refresh:0;url= Teacher_Profile.php");
             }
         } else {
-            //echo "No data returned";
+            echo "No such user !";
         }
     } else {
-        $db_error = "Data insert Error";
+        $db_error = "FILL ALL FIELDS";
     }
 }
