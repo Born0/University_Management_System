@@ -33,7 +33,8 @@ if (isset($_POST['submit'])) {
             $_SESSION["id"] = $entity->getId();
             $_SESSION["UserType"] = $entity->getType();
             if ($entity->getType() == 'teacher') {
-                header("Refresh:0;url= Teacher_Home.php");
+                // header("Refresh:0;url= Teacher_Home.php");
+                header("Refresh:0;url= Teacher_Profile.php");
             }
         } else {
             //echo "No data returned";

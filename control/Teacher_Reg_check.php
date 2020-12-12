@@ -195,12 +195,7 @@ if (isset($_POST['submit'])) {
 
     if ($flag) {
         $t_repo = new Teacher_repo();
-        $res = $t_repo->Insert($teacher);
-        if ($res != null) {
-            echo  "you are ready to login <br> your id is:" . $res;
-        } else {
-            echo "There's a problem registering new Teacher. checkyour email address";
-        }
+        $t_repo->Insert($teacher);
     } else {
         $db_error = "Choose between options";
     }

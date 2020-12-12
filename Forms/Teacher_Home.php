@@ -15,13 +15,14 @@ $teacher_reg = "Teacher_Reg.php";
 ?>
 
 <head>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="submit" name=logout value="logout">
-    </form>
-    <link rel="stylesheet" href="../CSS/Teacher_Home.css">
+    <link rel="stylesheet" href="../CSS/Teacher_Home2.css">
 </head>
 
 <body>
+    <form method="POST" enctype="multipart/form-data">
+        <!-- <input type="submit" name=logout value="logout"> -->
+        <button type="submit" name=logout class="logoutbtn">Logout</button>
+    </form>
     <div class="header">
         <h1>Web University Bangladesh </h1>
     </div>

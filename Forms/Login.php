@@ -8,6 +8,7 @@ include('../control/Login_check.php');
 
 <head>
     <link rel="stylesheet" href="../CSS/Teacher_Home.css">
+
 </head>
 
 <body>
@@ -20,13 +21,13 @@ include('../control/Login_check.php');
         <table>
 
             <tr>
-                <td><label for="Email or Id">Email or Id : </label></td>
-                <td><input type="text" name="username" placeholder="Email or Id"><?php echo $UserNameError ?></td>
+                <td><label for=" Email or Id">Email or Id : </label></td>
+                <td><input type="text" name="username" id="username" placeholder="Email or Id"><?php echo $UserNameError ?></td>
             </tr>
 
             <tr>
                 <td><label for="Password">Enter your password : </label></td>
-                <td><input type="password" name="password" placeholder="Password"><?php echo $PasswordError ?></td>
+                <td><input type="password" name="password" id="password" placeholder="Password"><?php echo $PasswordError ?></td>
             </tr>
 
         </table>

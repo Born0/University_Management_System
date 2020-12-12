@@ -1,8 +1,9 @@
 .header {
-  background-color: #f1f1f1;
+  background-color: #599995;
   text-align: left;
   padding: 5px;
 }
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -28,7 +29,20 @@ ul {
 }
 h3 {
   font: outline;
-  color: chartreuse;
+  color: #333;
   font-size: xx-large;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: #b6d3d1;
+}
+.logoutbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 7px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+}
+.logoutbtn:hover {
+  opacity: 1;
 }
