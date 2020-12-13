@@ -7,20 +7,8 @@ include('../control/Login_check.php');
 <html>
 
 <head>
-    <!-- <link rel="stylesheet" href="../CSS/Teacher_Home.css"> -->
     <link rel="stylesheet" href="../CSS/Login.css">
-    <script>
-        function validateForm() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            if (username == "" || password == "") {
-                alert("Name and Password must be filled out");
-                return false;
-            } else {
-                return true;
-            }
-        }
-    </script>
+    <script src="../JS/Login.js"></script>
 </head>
 
 

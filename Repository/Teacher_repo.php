@@ -21,14 +21,23 @@ class Teacher_repo
         '" . $entity->getDesignation() . "','" . $entity->getWorking_Experience() . "'  ,  '" . $entity->getPassword() . "','" . $entity->getImage() . "')";
 
         $result = $this->db->executeQuery($sql);
-        if ($result > 0) {
+        if ($result) {
             $id = $this->Get($entity)->getId();
-            //return $id;
-            echo " your id is:" . $id;
+            $res = $this->InsertType($entity, $id);
+            if ($res) {
+                return $id;
+            } else {
+                return null;
+            }
+            // echo " your id is:" . $id;
         } else {
             //echo "INSERT ERROR";
             return null;
         }
+    }
+
+    function InsertType(Teacher $entity, $id)
+    {
         $type = "teacher";
         $sql2 = "INSERT INTO login_type (id,email,password,type)VALUES(?,?,?,?) ";
         $stm = $this->db->conn->prepare($sql2);
@@ -38,10 +47,11 @@ class Teacher_repo
         $password = $entity->getPassword();
         $result2 = $stm->execute();
         if ($result2) {
-            echo  "<br>you are ready to login ";
             $stm->close();
+            return true;
         } else {
-            echo "INSERT ERROR from login_type";
+            return false;
+            //echo "INSERT ERROR from login_type";
             //return null;
         }
     }

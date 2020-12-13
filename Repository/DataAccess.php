@@ -14,8 +14,8 @@ class DataAccess
         if ($result != null) {
             return $result;
         } else {
-            //return null;
-            echo "Error from DataAcces Exe";
+            return null;
+            // echo "Error from DataAcces Exe";
             echo $result;
         }
     }

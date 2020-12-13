@@ -8,10 +8,3 @@ if (isset($_POST['logout'])) {
 $teacher = new Teacher();
 $teacher->setEmail($_SESSION["email"]);
 $t_repo = new Teacher_repo();
-$t_name = $t_repo->Get($teacher)->getName();
-$gender = $teacher->getGender();
-if ($gender == "male") {
-    $gender = "Mr. ";
-} else {
-    $gender = "Mst. ";
-}

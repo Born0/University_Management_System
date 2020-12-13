@@ -20,11 +20,19 @@ $teacher_reg = "Teacher_Reg.php";
 
 <body>
     <form method="POST" enctype="multipart/form-data">
-        <!-- <input type="submit" name=logout value="logout"> -->
         <button type="submit" name=logout class="logoutbtn">Logout</button>
     </form>
+
     <div class="header">
-        <h1>Web University Bangladesh </h1>
+        <ul>
+            <li> <img src="../Resources/varsity .png" alt="University logo">
+            </li>
+            <li>
+                <h1>Web University Bangladesh </h1>
+            </li>
+        </ul>
+
+
     </div>
 
     <div class="topnav">

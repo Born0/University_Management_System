@@ -12,7 +12,7 @@
 
     <div class="footer">
         <h2><?php
-            echo "<p>Copyright &copy; 2020-" . date("Y") . " wubd.com</p>";
+            echo "<p>Copyright &copy; 2020-" . date("Y") . " wubd.edu</p>";
             ?></h2>
     </div>
 
