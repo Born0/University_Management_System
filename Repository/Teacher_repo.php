@@ -88,6 +88,39 @@ class Teacher_repo
             echo "0 result ";
         }
     }
+
+    function GetBy(Teacher $entity)
+    {
+
+        $sql2 = "SELECT * FROM teacher WHERE t_name LIKE '" . $entity->getName() . "' OR t_id='" . $entity->getId() . "' ";
+        $result = $this->db->ReaderQuery($sql2);
+        $allEntity = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $entity->setId($row["t_id"]);
+                $entity->setName($row["t_name"]);
+                $entity->setEmail($row["email"]);
+                $entity->setDob($row["dob"]);
+                $entity->setGender($row["gender"]);
+                $entity->setBlood($row["blood_group"]);
+                $entity->setAddress($row["address"]);
+                $entity->setContact($row["contact_number"]);
+                $entity->setReligion($row["religion"]);
+                $entity->setJoinig_year($row["joining_year"]);
+                $entity->setSalary($row["salary"]);
+                $entity->setDept($row["department"]);
+                $entity->setDesignation($row["designation"]);
+                $entity->setWorking_Experience($row["working_experience"]);
+                $entity->setPassword($row["password"]);
+                $entity->setImage($row["profile_image"]);
+                array_push($allEntity, $entity);
+            }
+            return $allEntity;
+        } else {
+            echo "0 result ";
+        }
+    }
+
     function Update(Teacher $entity)
     {
         $sql3 = "UPDATE teacher SET  t_name='" . $entity->getName() . "' ,blood_group='" . $entity->getBlood() . "',address='" . $entity->getAddress() . "',
