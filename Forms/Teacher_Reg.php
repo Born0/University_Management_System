@@ -31,8 +31,9 @@
         include('../control/Teacher_Reg_check.php');
         ?>
 
-    <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-        <div class="container">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+
             <ul>
                 <li> <label> Name</label>
                     : <input type="text" id="name" name="name"><?php echo $error_name ?> </li>
@@ -41,7 +42,7 @@
                 <li><label for="birthday">Date of Birth</label><?php echo $error_dob ?>
                     : <input type="date" id="dob" name="birthday"> </li>
                 <li> <label for="gender">Gender </label>
-                    : <input type="radio" id="gender" name="gender" value="male" checked><label for="male">Male</label>
+                    : <input type="radio" id="gender1" name="gender" value="male" checked><label for="male">Male</label>
                     <input type="radio" id="gender" name="gender" value="female"><label for="female">Female</label><?php echo $error_gender ?></li>
                 <li> <label for="blood">Blood Group</label><?php echo $error_blood ?>
                     : <select name="blood" id="blood">
@@ -85,15 +86,16 @@
                 <button type="submit" name=refresh class="registerbtn">Refresh</button>
 
             </ul>
-        </div>
-    </form>
+
+        </form>
+    </div>
 
     <br><br><br><br><br>
     <!-- Search  -->
 
     <label>find detail of user</label>
     <input type="text" id="uname" onkeyup="showmyuser()">
-    <p id="mytext"></p>
+    <p id="mytext"> </p>
 
     <!--  -->
 

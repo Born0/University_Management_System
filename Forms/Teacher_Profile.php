@@ -16,6 +16,7 @@ if (empty($_SESSION["email"])) {
 
 <body>
 
+
     <form action="Teacher_Profile_Update.php" method="POST" enctype="multipart/form-data">
         <div class="container">
             <ul>
@@ -75,8 +76,8 @@ if (empty($_SESSION["email"])) {
                 </li>
             </ul>
             <input type="submit" name=edit class="registerbtn" value="Edit profile">
-        </div>
 
+        </div>
     </form>
 
     <br><br>

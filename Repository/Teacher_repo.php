@@ -58,6 +58,34 @@ class Teacher_repo
 
     function GetAll()
     {
+        $entity = new Teacher();
+        $sql2 = "SELECT * FROM teacher ";
+        $result = $this->db->ReaderQuery($sql2);
+        $allEntity = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $entity->setId($row["t_id"]);
+                $entity->setName($row["t_name"]);
+                $entity->setEmail($row["email"]);
+                $entity->setDob($row["dob"]);
+                $entity->setGender($row["gender"]);
+                $entity->setBlood($row["blood_group"]);
+                $entity->setAddress($row["address"]);
+                $entity->setContact($row["contact_number"]);
+                $entity->setReligion($row["religion"]);
+                $entity->setJoinig_year($row["joining_year"]);
+                $entity->setSalary($row["salary"]);
+                $entity->setDept($row["department"]);
+                $entity->setDesignation($row["designation"]);
+                $entity->setWorking_Experience($row["working_experience"]);
+                $entity->setPassword($row["password"]);
+                $entity->setImage($row["profile_image"]);
+                array_push($allEntity, $entity);
+            }
+            return $allEntity;
+        } else {
+            echo "0 result ";
+        }
     }
     function Get(Teacher $entity)
     {
@@ -91,10 +119,11 @@ class Teacher_repo
 
     function GetBy(Teacher $entity)
     {
-
-        $sql2 = "SELECT * FROM teacher WHERE t_name LIKE '" . $entity->getName() . "' OR t_id='" . $entity->getId() . "' ";
+        $name = $entity->getName();
+        $sql2 = "SELECT * FROM `teacher` WHERE  `t_name` LIKE '%" . $name . "%' ";
         $result = $this->db->ReaderQuery($sql2);
-        $allEntity = array();
+        $allEntity = new Teacher();
+        $allEntity =  array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $entity->setId($row["t_id"]);
@@ -114,7 +143,11 @@ class Teacher_repo
                 $entity->setPassword($row["password"]);
                 $entity->setImage($row["profile_image"]);
                 array_push($allEntity, $entity);
+                //$allEntity[] = $entity;
             }
+            // echo $allEntity[0]->getName();
+            // echo $allEntity[1]->getName();
+            // echo $allEntity[2]->getName();
             return $allEntity;
         } else {
             echo "0 result ";

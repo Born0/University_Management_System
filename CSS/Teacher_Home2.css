@@ -5,10 +5,6 @@
   border-radius: 5px 5px 0px 0px;
   margin-left: 0%;
 }
-.header ul li {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
 
 .topnav {
   overflow: hidden;
@@ -41,16 +37,29 @@ h3 {
   background-color: #b6d3d1;
 }
 .logoutbtn {
-  background-color: #599995;
-  color: white;
-  padding: 5px 7px;
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 8px 8px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 10%;
+  width: 4%;
   opacity: 0.9;
-  align-content: right;
+  float: right;
+  margin-top: -56px;
 }
 .logoutbtn:hover {
   opacity: 1;
+}
+
+.icon {
+  height: 56px;
+  margin-top: 13px;
+}
+
+.title {
+  margin-left: 70px;
+  margin-top: -81px;
+  overflow: hidden;
+  margin-bottom: -25px;
 }

@@ -8,6 +8,7 @@
   background-color: #b6d3d1;
   padding-bottom: 10%;
   border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
 }
 
 input[type="text"],
@@ -47,7 +48,8 @@ a {
 }
 
 select {
-  width: 5%;
+  margin-left: 195px;
+  width: 7%;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -56,6 +58,14 @@ select {
   margin-bottom: 16px;
   resize: vertical;
 }
+
+#gender1 {
+  margin-left: 230px;
+}
+#gender {
+  margin-left: 20px;
+}
+
 form {
   align-content: center;
 }
