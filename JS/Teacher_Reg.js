@@ -1,4 +1,5 @@
 function validateForm() {
+    var flag=true;
     var name = document.getElementById("name").value;
     var email =document.getElementById("email").value;
     var dob=document.getElementById("dob").value;
@@ -16,8 +17,29 @@ function validateForm() {
     if (name == "" ||  email==""  || dob==""  || gender==""  || blood==""  || contact==""  || address==""  || religion==""|| 
         joining_year==""  || dept==""  || designation==""  || working_experience==""  || salary==""  || password=="" ) {
         alert("PLEASE FILL ALL THE FIELDs");
-        return false;
+        flag=false;
+        return flag;
     } else {
-        return true;
-    }
+        var letters = /^[A-Za-z ]+$/;
+        var number=/^[0-9]+$/;
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        // if(name.value.match(letters)){alert("name available");}
+        // else{flag=false; alert("Invalid Name"); }
+
+        // if(religion.value.match(letters)){}
+        // else{flag=false; alert("Invalid Religion");}
+
+        // if(designation.value.match(letters)){}
+        // else{flag=false;  alert("Invalid Designation");}
+
+        // if(contact.value.match(number)){}
+        // else{flag=false;  alert("Invalid Contact");}
+
+        
+        if(email.value.match(mailformat)) {}
+        else{flag=false;  alert("Invalid Email");}
+        
+        return flag;
+    } 
 }

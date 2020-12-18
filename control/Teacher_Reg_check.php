@@ -202,7 +202,7 @@ if (isset($_POST['submit'])) {
         } else {
             echo " your id is:" . $mainId;
             echo "you are ready to login";
-            // echo "<script type=\"text/javascript\">alart( 'login success'); </script>";
+            //echo "<script >alart( 'you are ready to login'); </script>";
         }
     } else {
         $db_error = " Missed Choosing between options";

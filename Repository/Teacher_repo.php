@@ -85,45 +85,49 @@ class Teacher_repo
             return $allEntity;
         } else {
             echo "0 result ";
+            return null;
         }
     }
     function Get(Teacher $entity)
     {
 
-        $sql2 = "SELECT * FROM teacher WHERE email='" . $entity->getEmail() . "' OR t_id = '" . $entity->getId() . "'";
+        $sql2 = "SELECT * FROM teacher WHERE t_id = '" . $entity->getId() . "'  OR email='" . $entity->getEmail() . "' ";
         $result = $this->db->ReaderQuery($sql2);
+        $newEntity = new Teacher();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $entity->setId($row["t_id"]);
-                $entity->setName($row["t_name"]);
-                $entity->setEmail($row["email"]);
-                $entity->setDob($row["dob"]);
-                $entity->setGender($row["gender"]);
-                $entity->setBlood($row["blood_group"]);
-                $entity->setAddress($row["address"]);
-                $entity->setContact($row["contact_number"]);
-                $entity->setReligion($row["religion"]);
-                $entity->setJoinig_year($row["joining_year"]);
-                $entity->setSalary($row["salary"]);
-                $entity->setDept($row["department"]);
-                $entity->setDesignation($row["designation"]);
-                $entity->setWorking_Experience($row["working_experience"]);
-                $entity->setPassword($row["password"]);
-                $entity->setImage($row["profile_image"]);
-                return $entity;
+                $newEntity->setId($row["t_id"]);
+                $newEntity->setName($row["t_name"]);
+                $newEntity->setEmail($row["email"]);
+                $newEntity->setDob($row["dob"]);
+                $newEntity->setGender($row["gender"]);
+                $newEntity->setBlood($row["blood_group"]);
+                $newEntity->setAddress($row["address"]);
+                $newEntity->setContact($row["contact_number"]);
+                $newEntity->setReligion($row["religion"]);
+                $newEntity->setJoinig_year($row["joining_year"]);
+                $newEntity->setSalary($row["salary"]);
+                $newEntity->setDept($row["department"]);
+                $newEntity->setDesignation($row["designation"]);
+                $newEntity->setWorking_Experience($row["working_experience"]);
+                $newEntity->setPassword($row["password"]);
+                $newEntity->setImage($row["profile_image"]);
+                return $newEntity;
             }
         } else {
             echo "0 result ";
+            return null;
         }
     }
 
     function GetBy(Teacher $entity)
     {
         $name = $entity->getName();
-        $sql2 = "SELECT * FROM `teacher` WHERE  `t_name` LIKE '%" . $name . "%' ";
+        $sql2 = "SELECT * FROM `teacher` WHERE  concat(`t_name`, `email`) LIKE '%" . $name . "%' ";
         $result = $this->db->ReaderQuery($sql2);
         $allEntity = new Teacher();
         $allEntity =  array();
+
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $entity->setId($row["t_id"]);
@@ -142,7 +146,7 @@ class Teacher_repo
                 $entity->setWorking_Experience($row["working_experience"]);
                 $entity->setPassword($row["password"]);
                 $entity->setImage($row["profile_image"]);
-                array_push($allEntity, $entity);
+                array_push($allEntity, $entity->getId());
                 //$allEntity[] = $entity;
             }
             // echo $allEntity[0]->getName();
@@ -150,7 +154,7 @@ class Teacher_repo
             // echo $allEntity[2]->getName();
             return $allEntity;
         } else {
-            echo "0 result ";
+            return null;
         }
     }
 
@@ -167,6 +171,7 @@ class Teacher_repo
             return true;
         } else {
             echo  "Profile Update ERROR !!";
+            return null;
         }
     }
     function Delete(Teacher $entity)
