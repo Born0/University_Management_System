@@ -6,6 +6,7 @@
     <script src="../JS/Teacher_Reg.js"></script>
     <!-- Search -->
     <script src="../JS/Teacher_Search.js"></script>
+    <script src="../JS/Jquery.js"></script>
     <!--  -->
 </head>
 
@@ -19,7 +20,7 @@
         <!-- Search  -->
 
         <label>find user:</label>
-        <input type="text" id="uname" onkeyup="showmyuser()">
+        <input type="text" id="uname" oninput="showmyuser()" onkeyup="showHide()">
         <p id="mytext"> </p>
 
         <!--  -->
