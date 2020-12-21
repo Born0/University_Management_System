@@ -6,7 +6,8 @@
     <script src="../JS/Teacher_Reg.js"></script>
     <!-- Search -->
     <script src="../JS/Teacher_Search.js"></script>
-    <script src="../JS/Jquery.js"></script>
+
+
     <!--  -->
 </head>
 
@@ -20,10 +21,10 @@
         <!-- Search  -->
 
         <label>find user:</label>
-        <input type="text" id="uname" oninput="showmyuser()" onkeyup="showHide()">
+        <input type="text" id="uname" onkeyup="showmyuser()">
         <p id="mytext"> </p>
 
-        <!--  -->
+        <!-- onkeyup="showHide()" -->
         <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
 
             <ul>

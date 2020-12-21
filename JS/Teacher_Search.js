@@ -1,5 +1,6 @@
 function showmyuser() {
     var uname = document.getElementById("uname").value;
+  
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
 
