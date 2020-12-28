@@ -10,84 +10,79 @@ if (empty($_SESSION["email"])) {
 
 ?>
 
+<head>
+    <link rel="stylesheet" href="../CSS/Teacher_Reg.css">
+</head>
+
 <body>
-    <form method="POST" enctype="multipart/form-data">
-        <table>
-            <tr>
-                <table border="1" rules=NONE frame=box>
-                    <tr>
-                        <td>Section Name</td>
-                        <td></td>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <table border="1" rules=NONE frame=box align="center" style="width: 50%;">
+                        <tr>
+                            <td>Section Name</td>
+                            <td>Class Time</td>
 
-                        <td>Class Time</td>
-                    </tr>
-                    <tr>
-                        <td></td>
+                            <td><input type="submit" name=Details class="registerbtn" value="Details"></td>
+                        </tr>
+                    </table>
+                </tr>
+                <tr>
+                </tr>
 
-                        <td><input type="submit" name=Details value="Details"></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </tr>
-            <tr>
-            </tr>
-
-            <tr>
-                <table border="1" rules=NONE frame=box>
-                    <tr>
-                        <td>Section Name</td>
-                        <td></td>
-
-                        <td>Class Time</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-
-                        <td><input type="submit" name=Details value="Details"></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </tr>
-
-            <tr>
-                <table border="1" rules=NONE frame=box>
-                    <tr>
-                        <td>Section Name</td>
-                        <td></td>
-
-                        <td>Class Time</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-
-                        <td><input type="submit" name=Details value="Details"></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </tr>
-
-            <tr>
-                <table border="1" rules=NONE frame=box>
-                    <tr>
-                        <td>Section Name</td>
-                        <td></td>
-
-                        <td>Class Time</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-
-                        <td><input type="submit" name=Details value="Details"></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </tr>
+                <tr>
+                    <table border="1" rules=NONE frame=box align="center" style="width: 50%;">
+                        <tr>
+                            <td>Section Name</td>
 
 
-        </table>
-        <br><br>
-        <?php include '../Common/footer.php'; ?>
-    </form>
+                            <td>Class Time</td>
+
+
+
+                            <td><input type="submit" class="registerbtn" name=Details value="Details"></td>
+
+                        </tr>
+                    </table>
+                </tr>
+
+                <tr>
+                    <table border="1" rules=NONE frame=box align="center" style="width: 50%;">
+                        <tr>
+                            <td>Section Name</td>
+
+
+                            <td>Class Time</td>
+
+
+
+                            <td><input type="submit" class="registerbtn" name=Details value="Details"></td>
+
+                        </tr>
+                    </table>
+                </tr>
+
+                <tr>
+                    <table border="1" rules=NONE frame=box align="center" style="width: 50%;">
+                        <tr>
+                            <td>Section Name</td>
+
+
+                            <td>Class Time</td>
+
+
+
+                            <td><input type="submit" class="registerbtn" name=Details value="Details"></td>
+
+                        </tr>
+                    </table>
+                </tr>
+            </table>
+            <br><br><br><br> <br><br><br><br><br>
+        </form>
+    </div>
+    <?php include '../Common/footer.php'; ?>
 </body>
 
 </html>

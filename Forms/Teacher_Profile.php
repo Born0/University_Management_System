@@ -75,7 +75,7 @@ if (empty($_SESSION["email"])) {
                             } ?> </label>
                 </li>
             </ul>
-            <input type="submit" name=edit class="registerbtn" value="Edit profile">
+            <input type="submit" name=edit id="edit" class="registerbtn" value="Edit profile">
 
         </div>
     </form>

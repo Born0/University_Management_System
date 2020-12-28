@@ -1,4 +1,4 @@
-function showmyuser() {
+function showTeacher() {
     var uname = document.getElementById("uname").value;
   
     var xhttp = new XMLHttpRequest();

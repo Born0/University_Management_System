@@ -4,11 +4,7 @@
 <head>
     <link rel="stylesheet" href="../CSS/Teacher_Reg.css">
     <script src="../JS/Teacher_Reg.js"></script>
-    <!-- Search -->
-    <script src="../JS/Teacher_Search.js"></script>
 
-
-    <!--  -->
 </head>
 
 <body><?php
@@ -18,14 +14,8 @@
         ?>
 
     <div class="container">
-        <!-- Search  -->
 
-        <label>find user:</label>
-        <input type="text" id="uname" onkeyup="showmyuser()">
-        <p id="mytext"> </p>
-
-        <!-- onkeyup="showHide()" -->
-        <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <form method="POST" enctype="multipart/form-data">
 
             <ul>
                 <li> <label> Name</label>
@@ -34,10 +24,10 @@
                     : <input type="text" id="email" name="email"><?php echo $error_email ?> </li>
                 <li><label for="birthday">Date of Birth</label><?php echo $error_dob ?>
                     : <input type="date" id="dob" name="birthday"> </li>
-                <li> <label for="gender">Gender </label>
+                <li> <label for="gender"><br> Gender </label>
                     : <input type="radio" id="gender1" name="gender" value="male" checked><label for="male">Male</label>
                     <input type="radio" id="gender" name="gender" value="female"><label for="female">Female</label><?php echo $error_gender ?></li>
-                <li> <label for="blood">Blood Group</label><?php echo $error_blood ?>
+                <li> <label for="blood"><br> Blood Group</label><?php echo $error_blood ?>
                     : <select name="blood" id="blood">
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
@@ -57,7 +47,7 @@
                     : <input type="text" id="religion" name="religion"><?php echo $error_religion ?> </li>
                 <li><label>Joining Year</label>
                     : <input type="date" id="joining_year" name="joining_year"><?php echo $error_joining_year ?> </li>
-                <li><label for="dept">Department:</label>
+                <li><label for="dept">Department</label>
                     : <select name="dept" id="dept">
                         <option value="CS">CS</option>
                         <option value="EEE">EEE</option>
@@ -75,11 +65,9 @@
                 </li>
                 <li><label>Profile image</label>
                     <input type="file" name="fileToUpload" id="fileToUpload"><?PHP echo $error_image; ?> </li>
-                <button type="submit" name=submit class="registerbtn">Submit</button>
-                <button type="submit" name=refresh class="registerbtn">Refresh</button>
-
+                <button type="submit" id="submit" name=submit class="registerbtn" onclick="validateForm()">Submit</button>
+                <button type="submit" id="refresh" name=refresh class="registerbtn">Refresh</button>
             </ul>
-
         </form>
     </div>
 

@@ -198,11 +198,19 @@ if (isset($_POST['submit'])) {
         $t_repo = new Teacher_repo();
         $mainId = $t_repo->Insert($teacher);
         if ($mainId == null) {
+            echo "<head>";
+            echo "<script >$(document).ready(function() { 
+                alart( 'User already exists');}); </script>";
+            echo "</head>";
             echo "User already exists";
         } else {
+
             echo " your id is:" . $mainId;
-            echo "you are ready to login";
-            //echo "<script >alart( 'you are ready to login'); </script>";
+            // echo "you are ready to login";
+            echo "<head>";
+            echo "<script >$(document).ready(function() { 
+                alart( 'you are ready to login');}); </script>";
+            echo "</head>";
         }
     } else {
         $db_error = " Missed Choosing between options";
