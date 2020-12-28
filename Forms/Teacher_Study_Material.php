@@ -2,11 +2,11 @@
 
 
 <head>
+    <link rel="stylesheet" href="../CSS/Teacher_Reg.css">
     <?php
     include('Teacher_Home.php');
-    //session_start();
     ?>
-    <link rel="stylesheet" href="../CSS/Teacher_Reg.css">
+
 
 </head>
 
@@ -16,7 +16,7 @@
         <form method="POST" enctype="multipart/form-data">
             <table>
                 <tr>
-                    <td><input type="file" name="fileToUpload" id="fileToUpload"> <?PHP  ?></td>
+                    <td><input type="file" name="fileToUpload" id="fileToUpload"> </td>
                     <td></td>
                     <td><input type="submit" name=submit value="upload"></td>
                     </td>
@@ -24,20 +24,11 @@
                 <br><br><br>
             </table>
         </form>
-
-
-        <fieldset style="width: 50%;">
-            <legend>Study Materials</legend>
-            <table>
-                <tr>
-                    <td>"[prev uploads]"</td>
-                </tr>
-
-            </table>
-        </fieldset>
-        <br><br>
     </div>
-    <?php include '../Common/footer.php'; ?>
+    <?php
+    include('../control/Teacher_Study_Material_Control.php');
+    include('../Common/footer.php');
+    ?>
 
 </body>
 

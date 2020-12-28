@@ -177,18 +177,6 @@ if (isset($_POST['submit'])) {
     $target_dir = "files/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        //$file_status = "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-
-        ///////////////////
-        // if (empty($target_file)) {
-        //     $error_image = "upload a image";
-        //     $flag = false;
-        // } else {
-        //     //$image = $target_file;
-        //     $_SESSION["fileToUpload"] = $target_file;
-        //     $teacher->setImage($target_file);
-        // }
-        //////////////////
         $teacher->setImage($target_file);
     } else {
         $file_status = "Sorry, there was an error uploading your file.";
