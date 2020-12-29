@@ -123,7 +123,7 @@ class Teacher_repo
     function GetBy(Teacher $entity)
     {
         $name = $entity->getName();
-        $sql2 = "SELECT * FROM `teacher` WHERE  concat(`t_name`, `email`) LIKE '%" . $name . "%' ";
+        $sql2 = "SELECT * FROM `teacher` WHERE concat(`t_id`, `t_name`, `email`) LIKE '%" . $name . "%' ";
         $result = $this->db->ReaderQuery($sql2);
         $allEntity = new Teacher();
         $allEntity =  array();

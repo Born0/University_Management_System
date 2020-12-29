@@ -1,14 +1,8 @@
-function showHide(){
-      
-    var uname = document.getElementById("uname").value;
-   if(uname==""){
-    
-   }
-
-    // var uname = document.getElementById("uname").value;
-    // if(uname==""){
-    // document.getElementById("mytext").innerHTML = "" ;
-    // }
-    
-}
-
+$(document).ready(function() {
+    $("#submit").mouseover(function() {
+        $("#submit").css("background-color", "#599995");
+    });
+    $("#submit").mouseout(function() {
+        $("#submit").css("background-color", "#41afa8");
+    });
+});

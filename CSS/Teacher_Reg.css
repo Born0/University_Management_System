@@ -3,7 +3,7 @@
 }
 
 .container {
-  padding: 10px;
+  /* padding: 10px; */
   text-align: left;
   background-color: #b6d3d1;
   padding-bottom: 10%;
@@ -34,9 +34,16 @@ input[type="password"]:focus {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 10%;
+  width: 100%;
   opacity: 0.9;
+}
+
+#submit,
+#refresh,
+#edit,
+#update {
   margin-left: 53%;
+  width: 10%;
 }
 
 .registerbtn:hover {
@@ -48,7 +55,7 @@ a {
 }
 
 select {
-  margin-left: 195px;
+  margin-left: 190px;
   width: 7%;
   padding: 5px;
   border: 1px solid #ccc;
@@ -60,12 +67,52 @@ select {
 }
 
 #gender1 {
-  margin-left: 230px;
+  margin-left: 220px;
 }
 #gender {
   margin-left: 20px;
 }
-
+#name,
+#email {
+  margin-left: 230px;
+}
+#dob {
+  margin-left: 182px;
+}
+#contact {
+  margin-left: 165px;
+}
+#address,
+#religion {
+  margin-left: 220px;
+}
+#joining_year {
+  margin-left: 195px;
+}
+#dept {
+  margin-left: 200px;
+}
+#designation {
+  margin-left: 195px;
+}
+#working_experience {
+  margin-left: 143px;
+}
+#salary {
+  margin-left: 235px;
+}
+#password {
+  margin-left: 215px;
+}
+#blood {
+  margin-left: 190px;
+}
+#id {
+  margin-left: 255px;
+}
+#fileToUpload {
+  margin-left: 200px;
+}
 form {
   align-content: center;
 }
@@ -86,4 +133,22 @@ form {
 #reg {
   margin-left: 20%;
   vertical-align: auto;
+}
+.search {
+  padding: 10px;
+  text-align: left;
+  background-color: #b6d3d1;
+  padding-bottom: 10%;
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+#search {
+  margin-left: 30%;
+}
+#uname {
+  border: #333;
+  border-bottom: double;
+}
+#mytext {
+  margin-left: 30%;
 }

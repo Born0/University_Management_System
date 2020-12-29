@@ -1,4 +1,4 @@
-function showTeacher() {
+function showStudent() {
     var uname = document.getElementById("uname").value;
   
     var xhttp = new XMLHttpRequest();
@@ -10,7 +10,7 @@ function showTeacher() {
             document.getElementById("mytext").innerHTML = this.status;
         }
     };
-    xhttp.open("POST", "/University_Management_System/control/Teacher_Search_Control.php", true);
+    xhttp.open("POST", "/University_Management_System/control/Student_Search_Control.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("uname=" + uname);
 }

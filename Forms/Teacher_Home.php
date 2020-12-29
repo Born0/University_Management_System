@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <?php
 
@@ -12,6 +11,7 @@ $section = "Teacher_Section.php";
 $view_student = "Teacher_View_Student.php";
 $profile = "Teacher_Profile.php";
 $teacher_reg = "Teacher_Reg.php";
+$teacher_search = "Teacher_Search.php";
 ?>
 
 <head>
@@ -48,6 +48,9 @@ $teacher_reg = "Teacher_Reg.php";
                     </a></li>
                 <li> <a href="<?php echo $teacher_reg ?>">
                         Registration
+                    </a></li>
+                <li> <a href="<?php echo $teacher_search ?>">
+                        Search
                     </a></li>
             </ul>
 
