@@ -27,6 +27,8 @@ VALUES("."'". $admin->getName() . "','" . $admin->getEmail() . "','" . $admin->g
         if ($result > 0) 
 			echo "Insertion Successfull";
 		else echo "Insertion Failed";
+		
+		
 	}
 	
      /*   $result = $this->db->executeQuery($sql);
@@ -70,7 +72,19 @@ VALUES("."'". $admin->getName() . "','" . $admin->getEmail() . "','" . $admin->g
         } else {
             echo "0 result ";
         }
-    } /*
+    } 
+	
+	function InsertLogin($id,$email,$password,$type)
+	{
+		$sql3="INSERT INTO login_type(id,email,password,type) VALUES('".$id."','".$email."','".$password."','".$type."')";
+		$result = $this->db->executeQuery($sql3);
+		if ($result > 0) 
+			echo "Login Insertion Successfull";
+		else echo "Insertion Failed";
+	}
+	
+	
+	/*
     function Update(Teacher $admin)
     {
         $sql3 = "UPDATE teacher SET  t_name='" . $admin->getName() . "' ,blood_group='" . $admin->getBlood() . "',address='" . $admin->getAddress() . "',

@@ -111,7 +111,9 @@
 			$_SESSION["mail"]=$mail;
 			$repo=new AdminRepo();
 			$repo->Insert($admin);
-			header("Refresh:0;url= AdminProfile.php");
+			$admin=$repo->Get($admin);
+			$repo->InsertLogin($admin->getId(),$admin->getEmail(),$admin->getPassword(),"admin");
+		//	header("Refresh:0;url= AdminProfile.php");
 		}
 		
 		?>
