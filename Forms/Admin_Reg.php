@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 	<body>
 		
 		<?php
 		session_start();
+		include("AdminHome.php");
 		include("../control/AdminRegCheck.php");
-		include("../Repository/AdminRepo.php");
-
+		
+		
 		?>
-		<h2 align="center">Admin Regisstration Form</h2>
+		
 
 			<form  method="post" enctype="multipart/form-data">
 
@@ -106,15 +108,7 @@
 	
 		</form> 
 		<?php
-		if($flag)
-		{
-			$_SESSION["mail"]=$mail;
-			$repo=new AdminRepo();
-			$repo->Insert($admin);
-			$admin=$repo->Get($admin);
-			$repo->InsertLogin($admin->getId(),$admin->getEmail(),$admin->getPassword(),"admin");
-		//	header("Refresh:0;url= AdminProfile.php");
-		}
+		
 		
 		?>
 	</body>

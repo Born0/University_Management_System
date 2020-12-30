@@ -1,7 +1,7 @@
 <?php
 
 include("../Entity/Admin.php");
-
+include("../Repository/AdminRepo.php");
 $admin=new Admin();
 $flag=true;
 $name=$mail=$dob=$gender=$bloodtype=$number=$address=$religion=$joinDate=$salary=$password="";
@@ -177,6 +177,16 @@ if (move_uploaded_file($_FILES["fileup"]["tmp_name"], $targetFile)) {
 	echo "Sorry, there was an error uploading your file.";
 }
 }
+
+if($flag)
+		{
+			$_SESSION["mail"]=$mail;
+			$repo=new AdminRepo();
+			$repo->Insert($admin);
+			$admin=$repo->Get($admin);
+			$repo->InsertLogin($admin->getId(),$admin->getEmail(),$admin->getPassword(),"admin");
+		//	header("Refresh:0;url= AdminProfile.php");
+		}
 
 
 ?>
