@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 	<body>
 		
 		<?php
 		session_start();
+		include("AdminHome.php");
 		include("../control/AdminRegCheck.php");
 		include("../Repository/AdminRepo.php");
-
+		
 		?>
-		<h2 align="center">Admin Regisstration Form</h2>
+		
 
 			<form  method="post" enctype="multipart/form-data">
 
