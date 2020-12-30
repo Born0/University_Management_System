@@ -35,13 +35,13 @@ if (isset($_POST['submit'])) {
             if ($entity->getType() == 'teacher') {
                 // header("Refresh:0;url= Teacher_Home.php");
                 header("Refresh:0;url= Teacher_Profile.php");
+            } else if ($entity->getType() == 'admin') {
+                header("Refresh:0;url= AdminProfile.php");
             }
-			else if($entity->getType() == 'admin')
-			{	
-				header("Refresh:0;url= AdminProfile.php");
-			}
         } else {
-            echo "No such user !";
+            echo '<script  > 
+            alert( "No such user !");
+             </script>';
         }
     } else {
         $db_error = "FILL ALL FIELDS";

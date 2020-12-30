@@ -8,6 +8,7 @@ include('../control/Login_check.php');
 
 <head>
     <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="stylesheet" href="../CSS/Footer.css">
     <script src="../JS/Login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../JS/Jquery.js"></script>
@@ -32,8 +33,11 @@ include('../control/Login_check.php');
             </form>
         </div>
     </div>
+    <br><br><br><br><br><br>
+    <div class="footer">
+        <?php include '../Common/footer.php'; ?>
+    </div>
 
-    <?php include '../Common/footer.php'; ?>
 </body>
 
 </html>

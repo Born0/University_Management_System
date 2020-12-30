@@ -14,7 +14,10 @@ if (isset($_POST['finalSubmit'])) {
     $g_repo = new Grade_repo();
     $result = $g_repo->Insert($grd);
     if ($result) {
-        echo " Uploaded";
+        echo " ";
+        echo '<script  > 
+        alert( "Uploaded");
+         </script>';
     } else {
         echo "Error";
     }

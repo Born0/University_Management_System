@@ -7,7 +7,6 @@ $error_name = $error_email = $error_dob = $error_gender = $error_blood = $error_
 $error_designation = $error_working_experience = $error_salary = $error_password = $error_image = "";
 $file_status = "";
 $flag = true;
-$mainId = "";
 $db_error = "";
 
 if (isset($_POST['refresh'])) {
@@ -186,19 +185,14 @@ if (isset($_POST['submit'])) {
         $t_repo = new Teacher_repo();
         $mainId = $t_repo->Insert($teacher);
         if ($mainId == null) {
-            echo "<head>";
-            echo "<script >$(document).ready(function() { 
-                alart( 'User already exists');}); </script>";
-            echo "</head>";
-            echo "User already exists";
-        } else {
 
-            echo " your id is:" . $mainId;
-            // echo "you are ready to login";
-            echo "<head>";
-            echo "<script >$(document).ready(function() { 
-                alart( 'you are ready to login');}); </script>";
-            echo "</head>";
+            echo '<script  > 
+                alert( "User already exists");
+                 </script>';
+        } else {
+            echo '<script >
+                alert( "you are ready to login. Your ID is ' . $mainId . '" );
+                 </script>';
         }
     } else {
         $db_error = " Missed Choosing between options";

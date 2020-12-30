@@ -14,7 +14,7 @@
     }
 
     ?>
-    <div class="search">
+    <div class="searchST">
         <label id="search"><b>Find user:</b></label>
         <input type="text" id="uname" onkeyup="showStudent()">
         <p id="mytext"> </p>
