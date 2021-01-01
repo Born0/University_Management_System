@@ -8,6 +8,9 @@ include('../control/Teacher_Profile_control.php');
 if (empty($_SESSION["email"])) {
     header("Location: Login.php");
 }
+if (!isset($_COOKIE["email"])) {
+    header("Location: Login.php");
+}
 ?>
 
 <head>
