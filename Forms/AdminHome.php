@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
-<?php Include("../control/AdminHomeControl.php")?>
+<?php Include("../control/AdminHomeControl.php")
+//<link rel="stylesheet" href="../CSS/header.css">
+/*<li><a href="#home">Accounts</a></li>*/
+
+?>
+
+
+
+
 <head>
-	<link rel="stylesheet" href="../CSS/header.css">
+<style>
+  <?php include "../CSS/header.css" ?>
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 
@@ -21,13 +33,15 @@
 			</div>
 
         <div class="topnav">
-			<ul>
-				<li><a href="#home">Accounts</a></li>
-				<li><a href="AdminProfile.php">Profile</a></li>
-				<li><a href="Admin_Reg.php">Registration</a></li>
-			</ul>
+			<a href="">Accounts</a>
+			<a href="AdminProfile.php">Profile</a>
+			<a href="RegPage.php">Registration</a>
+				
+				
+			
 		</div>
-	  </div>   
+	 </div>
+	 
 </body>
 	  
 	  
