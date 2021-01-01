@@ -167,10 +167,10 @@ class Teacher_repo
 
         $result3 = $this->db->executeQuery($sql3);
         if ($result3) {
-            echo "Profile Updated";
+            // echo "Profile Updated";
             return true;
         } else {
-            echo  "Profile Update ERROR !!";
+            //echo  "Profile Update ERROR !!";
             return null;
         }
     }

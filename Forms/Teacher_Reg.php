@@ -8,7 +8,7 @@
 </head>
 
 <body><?php
-        include('Teacher_home.php');
+        include('AdminHome.php');
         //session_start();
         include('../control/Teacher_Reg_check.php');
         ?>

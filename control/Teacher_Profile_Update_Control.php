@@ -144,6 +144,9 @@ if (isset($_POST['update'])) {
         $t_repo = new Teacher_repo();
         $result = $t_repo->Update($teacher);
         if ($result) {
+            echo '<script  > 
+            alert( "Updated");
+             </script>';
             header("Refresh:2; url=Teacher_Profile.php");
         }
     } else {

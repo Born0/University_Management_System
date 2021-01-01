@@ -1,6 +1,6 @@
 <?php
-//include('../Entity/Teacher_Entity.php');
-//include('../Repository/Teacher_repo.php');
+include('../Entity/Teacher_Entity.php');
+include('../Repository/Teacher_repo.php');
 
 $teacher = new Teacher();
 $error_name = $error_email = $error_dob = $error_gender = $error_blood = $error_contact = $error_address = $error_religion = $error_joining_year = $error_dept = "";

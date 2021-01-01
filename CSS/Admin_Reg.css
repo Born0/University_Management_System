@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  /* padding: 10px; */
+  text-align: left;
+  background-color: #b6d3d1;
+  padding-top: 5%;
+  padding-bottom: 30%;
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+
+.container2 {
+  /* padding: 10px; */
+  text-align: left;
+  background-color: #b6d3d1;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 30%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.registerbtn {
+  background-color: #356d69;
+  color: white;
+  padding: 5px 7px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+#submit,
+#refresh,
+#edit,
+#update {
+  margin-left: 53%;
+  width: 10%;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+form {
+  align-content: center;
+}
+
+.container ul li {
+  /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+  margin-left: 30%;
+}
+#img {
+  margin-left: 60%;
+  min-height: 70%;
+}
+.container ul {
+  margin-left: 0%;
+}
+
+#reg {
+  margin-left: 20%;
+  vertical-align: auto;
+}
+.search {
+  /* padding: 10px; */
+  text-align: left;
+  background-color: #b6d3d1;
+  padding-top: 2%;
+  padding-bottom: 30%;
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+.searchST {
+  /* padding: 10px; */
+  text-align: left;
+  background-color: #b6d3d1;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+#search {
+  margin-left: 30%;
+}
+#uname {
+  border: #333;
+  border-bottom: double;
+}
+#mytext {
+  margin-left: 30%;
+}
