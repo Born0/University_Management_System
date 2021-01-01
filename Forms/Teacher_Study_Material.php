@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container2">
         <h1>Section: "[section name]" </h1>
         <form method="POST" enctype="multipart/form-data">
             <table>
@@ -21,7 +21,6 @@
                     <td><input type="submit" name=submit value="upload"></td>
                     </td>
                 </tr>
-                <br><br><br>
             </table>
         </form>
     </div>

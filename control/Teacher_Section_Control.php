@@ -9,6 +9,5 @@
 //----------> get all section from Section table by Teacher Id
 
 if (isset($_POST['Details'])) {
-    echo "from section control";
     header("Refresh:0; url=Teacher_Study_Material.php");
 }
