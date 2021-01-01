@@ -37,4 +37,15 @@ class Material_Repo
             return null;
         }
     }
+
+    function Delete($name)
+    {
+        $sql = " DELETE FROM `study_material` WHERE 	file_path='" . $name . "' ";
+        $result = $this->db->executeQuery($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
