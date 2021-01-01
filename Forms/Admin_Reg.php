@@ -16,29 +16,29 @@
 	?>
 
 	<div class="container">
-		<h3 align=center>Admin Register</h3>
+		<h3 align=center>Admin Registration</h3>
 		<form method="post" enctype="multipart/form-data">
 
 			<table style="width:30%" align="center">
 				<tr>
 					<td> <label>Name</label></td>
-					<td> : <input type="text" id="name" name="name" align="center" value="<?php echo $name; ?>"><?php echo $error_name ?></td><br>
+					<td>  <input type="text" id="name" name="name" align="center" value="<?php echo $name; ?>"><?php echo $error_name ?></td><br>
 
 				</tr>
 
 				<tr>
 					<td><label>Email</label></td>
-					<td>: <input type="text" id="mail" name="mail" value="<?php echo $mail; ?>"><?php echo $error_email ?></td><br>
+					<td> <input type="text" id="mail" name="mail" value="<?php echo $mail; ?>"><?php echo $error_email ?></td><br>
 				</tr>
 
 				<tr>
 					<td><label>DOB</label></td>
-					<td>: <input style="font-size: 1rem" type="date" id="DOB" name="DOB" value="<?php echo $dob; ?>"><?php echo $error_dob ?><br></td>
+					<td> <input style="font-size: 1rem" type="date" id="DOB" name="DOB" value="<?php echo $dob; ?>"><?php echo $error_dob ?><br></td>
 				</tr>
 
 				<tr>
 					<td><label>Gender</label></td>
-					<td>:
+					<td>
 						<input type="radio" id="maleRadio" name="gender" value="M" checked>
 						<label>Male</label>
 						<input type="radio" id="femaleRadio" name="gender" value="F">
@@ -47,7 +47,7 @@
 				</tr>
 				<tr>
 					<td> <label for="bloodtype">BloodGroup</label></td>
-					<td>:
+					<td>
 						<select name="bloodtype" id="bloodtype">
 							<option value="A+">A+</option>
 							<option value="A-">A-</option>
@@ -63,33 +63,33 @@
 
 				<tr>
 					<td><label>Contact Number</label></td>
-					<td>: <input type="text" id="number" name="number" value="<?php echo $number; ?>"><?php echo $error_number ?></td>
+					<td> <input type="text" id="number" name="number" value="<?php echo $number; ?>"><?php echo $error_number ?></td>
 				</tr>
 
 
 				<tr>
 					<td> <label>Address</label></td>
-					<td>: <input type="text" id="address" name="address" value="<?php echo $address; ?>"><?php echo $error_address ?></td>
+					<td> <input type="text" id="address" name="address" value="<?php echo $address; ?>"><?php echo $error_address ?></td>
 				</tr>
 
 
 				<tr>
 					<td><label>Religion</label></td>
-					<td>: <input type="text" id="religion" name="religion" value="<?php echo $religion; ?>"><?php echo $error_religion ?></td>
+					<td> <input type="text" id="religion" name="religion" value="<?php echo $religion; ?>"><?php echo $error_religion ?></td>
 				</tr>
 
 				<tr>
 					<td><label>Joining Date</label></td>
-					<td>: <input style="font-size: 1rem" type="date" id="joinDate" name="joinDate" value="<?php echo $joinDate; ?>"><?php echo $error_joinDate ?></td>
+					<td><input style="font-size: 1rem" type="date" id="joinDate" name="joinDate" value="<?php echo $joinDate; ?>"><?php echo $error_joinDate ?></td>
 				</tr>
 
 				<tr>
 					<td><label>Salary</label></td>
-					<td>: <input type="text" id="salary" name="salary" value="<?php echo $salary; ?>"><?php echo $error_salary ?></td>
+					<td> <input type="text" id="salary" name="salary" value="<?php echo $salary; ?>"><?php echo $error_salary ?></td>
 				</tr>
 				<tr>
 					<td><label>Password</label></td>
-					<td>: <input type="text" id="password" name="password" value="<?php echo $password; ?>"><?php echo $error_password ?></td>
+					<td> <input type="text" id="password" name="password" value="<?php echo $password; ?>"><?php echo $error_password ?></td>
 				</tr>
 
 				<tr>

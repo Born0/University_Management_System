@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-
 <?php
 include("AdminHome.php");
 //include("../CSS/header.css"); 
 ?>
+<head>
+<Style>
+<?php
+include("../CSS/header.css"); 
+?>
+</Style>
 
 </head>
 <body>

@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
 
  	
-  global $name,$mail,$dob,$gender,$bloodtype,$number,$address,$religion,$joinDate,$salary,$password;
+ // global $name,$mail,$dob,$gender,$bloodtype,$number,$address,$religion,$joinDate,$salary,$password;
   
   if (empty($_REQUEST["name"])) 
     {
@@ -25,6 +25,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $error_name = "*Only letters and white space allowed";
             $flag = false;
         } 
+		else if(strlen($name)<8)
+		{
+			$error_name = "*Name cannot be less than 8 characters";
+            $flag = false;
+		}
 		else 
 		{
           
@@ -87,27 +92,43 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	{
         $error_number = "*Cannot be empty";
         $flag = false;
-    } else 
-	{
-        $number = $_REQUEST["number"];
-        if (!preg_match("/^[0-9]*$/", $number)) {
-            $error_number = "*Only numbers allowed";
+    } 
+	else {
+		 $number = $_REQUEST["number"];
+		 if(strlen($number)!=11&&strlen($number)!=13)
+		{
+			$error_number = "*Invalid Number";
             $flag = false;
-        } else {
-            $admin->setContact($number);
-        }
-    }
+		}
+	
+		else if (!preg_match("/^[0-9]*$/", $number)) {
+				$error_number = "*Only numbers allowed";
+				$flag = false;
+			} else {
+				$admin->setContact($number);
+			}
+		}
+	
 
     if (empty($_REQUEST["address"])) {
         $error_address = "*Cannot be empty";
         $flag = false;
-    } else	
-	{
-        $address = $_REQUEST["address"];
-        $admin->setAddress($address);
-    }
+    } 
+	else {
+		 $address = $_REQUEST["address"];
+		 if(strlen($address)<8)
+		{
+			$error_address = "*Address Cannot Be Less Than 8 Characters";
+            $flag = false;
+		}
 	
+		else	
+		{
+			
+			$admin->setAddress($address);
+		}
 	
+	}
 
     if (empty($_REQUEST["religion"])) {
         $error_religion = "*Cannot be empty";
@@ -118,7 +139,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         if (!preg_match("/^[a-zA-Z-' ]*$/", $religion)) {
             $$error_religion = "Only letters and white spaces allowed";
             $flag = false;
-        } else {
+        } 
+		else if(strlen($religion)<5)
+		{
+			$error_religion = "*Cannot Be Less Than 5 Characters";
+            $flag = false;
+		}
+		
+		
+		else {
             $admin->setReligion($religion);
         }
     }
@@ -147,7 +176,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         if (!ctype_alnum($salary)) {
             $error_salary = "*Only Numbers allowed";
             $flag = false;
-        } else 
+        }
+		else if(strlen($salary)<4)
+		{
+			$error_salary = "*Cannot Be Less Than 4 Digits";
+            $flag = false;
+		}
+		else 
 		{
             $admin->setSalary($salary);
         }
@@ -156,10 +191,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     if (empty($_REQUEST["password"])) {
         $error_password = "*Cannot be empty";
         $flag = false;
-    } else {
-        $password = $_REQUEST["password"];
-        $admin->setPassword($password);
-    }
+    } 
+	else{
+		$password = $_REQUEST["password"];
+		if(!ctype_alnum($password))
+		{
+		$error_password = "*Password Must Be Alphanumeric";
+		$flag = false;
+		}
+		else {
+			
+			$admin->setPassword($password);
+		}
+	}
    
 }
 else $flag=false;
@@ -180,7 +224,7 @@ if (move_uploaded_file($_FILES["fileup"]["tmp_name"], $targetFile)) {
 
 if($flag)
 		{
-			$_SESSION["mail"]=$mail;
+			$_SESSION["email"]=$mail;
 			$repo=new AdminRepo();
 			$repo->Insert($admin);
 			$admin=$repo->Get($admin);
