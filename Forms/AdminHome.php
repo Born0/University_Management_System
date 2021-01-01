@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<?php Include("../control/AdminHomeControl.php")?>
 <head>
 	<link rel="stylesheet" href="../CSS/header.css">
 </head>
@@ -15,7 +15,7 @@
 				<div class="title">
 					<h1>Web University<br>Bangladesh</h1>
 				</div>
-				<form method="POST" enctype="multipart/form-data">
+				<form method="GET" enctype="multipart/form-data">
 					<button type="submit" name=logout class="logoutbtn">Logout</button>
 				</form>
 			</div>
