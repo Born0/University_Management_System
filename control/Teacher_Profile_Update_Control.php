@@ -20,6 +20,7 @@ if (isset($_POST['update'])) {
 
     if (empty($_REQUEST["name"])) {
         $error_name = "  Invalid name";
+        $flag = false;
     } else {
         $name = $_REQUEST["name"];
         if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
@@ -147,9 +148,11 @@ if (isset($_POST['update'])) {
             echo '<script  > 
             alert( "Updated");
              </script>';
-            header("Refresh:2; url=Teacher_Profile.php");
+            header("Refresh:0; url=Teacher_Profile.php");
         }
     } else {
-        $db_error = "Data Update Error";
+        echo '<script  > 
+            alert( "Invalid Changes");
+             </script>';
     }
 }

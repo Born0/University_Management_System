@@ -2,15 +2,6 @@
 
 <?php
 //session_start();
-/*if (empty($_SESSION["email"])) {
-	header("Location: Login.php");
-}
-if (!isset($_COOKIE["email"])) {
-	header("Location: Login.php");
-}
-include("../control/AdminHomeControl.php")
-//<link rel="stylesheet" href="../CSS/header.css">
-/*<li><a href="#home">Accounts</a></li>*/
 include("../control/AdminHomeControl.php")
 ?>
 

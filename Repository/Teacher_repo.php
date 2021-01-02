@@ -29,9 +29,8 @@ class Teacher_repo
             } else {
                 return null;
             }
-            // echo " your id is:" . $id;
         } else {
-            //echo "INSERT ERROR";
+
             return null;
         }
     }
@@ -51,8 +50,6 @@ class Teacher_repo
             return true;
         } else {
             return false;
-            //echo "INSERT ERROR from login_type";
-            //return null;
         }
     }
 
@@ -147,11 +144,7 @@ class Teacher_repo
                 $entity->setPassword($row["password"]);
                 $entity->setImage($row["profile_image"]);
                 array_push($allEntity, $entity->getId());
-                //$allEntity[] = $entity;
             }
-            // echo $allEntity[0]->getName();
-            // echo $allEntity[1]->getName();
-            // echo $allEntity[2]->getName();
             return $allEntity;
         } else {
             return null;
@@ -167,10 +160,8 @@ class Teacher_repo
 
         $result3 = $this->db->executeQuery($sql3);
         if ($result3) {
-            // echo "Profile Updated";
             return true;
         } else {
-            //echo  "Profile Update ERROR !!";
             return null;
         }
     }

@@ -31,7 +31,8 @@ if (isset($_POST['submit'])) {
         if ($entity != null) {
             $cookie_name = "email";
             $cookie_value = $entity->getEmail();
-            setcookie($cookie_name, $cookie_value, time() + (10), "/");
+            setcookie($cookie_name, $cookie_value, time() + (180), "/");
+
             $_SESSION["email"] = $entity->getEmail();
             $_SESSION["id"] = $entity->getId();
             $_SESSION["UserType"] = $entity->getType();

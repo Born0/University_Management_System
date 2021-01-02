@@ -12,8 +12,8 @@ class Credential
     function Get(Login  $entity)
     {
 
-        $sql2 = "SELECT * FROM login_type WHERE  email='" . $entity->getUsername() . "' OR id = '" . $entity->getUsername() . "' 
-                                            AND password= '" . $entity->getPassword() . "' ";
+        $sql2 = "SELECT * FROM login_type WHERE  email='" . $entity->getUsername() . "' OR 
+        id = '" . $entity->getUsername() . "'  AND password= '" . $entity->getPassword() . "' ";
         $result = $this->db->ReaderQuery($sql2);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {

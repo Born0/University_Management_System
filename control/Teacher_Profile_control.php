@@ -8,5 +8,5 @@ $t_repo = new Teacher_repo();
 $entity = new Teacher();
 $entity = $t_repo->Get($teacher);
 if (!isset($entity)) {
-    echo "error from teacher profile control";
+    //echo "error from teacher profile control";
 }

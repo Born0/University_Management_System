@@ -24,20 +24,21 @@ function validateForm() {
         var number=/^[0-9]+$/;
         var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-        // if(name.value.match(letters)){alert("name available");}
-        // else{flag=false; alert("Invalid Name"); }
+       
+        if(name.match(letters)){alert("name available");}
+        else{flag=false; alert("Invalid Name"); }
 
-        // if(religion.value.match(letters)){}
-        // else{flag=false; alert("Invalid Religion");}
+        if(religion.match(letters)){}
+        else{flag=false; alert("Invalid Religion");}
 
-        // if(designation.value.match(letters)){}
-        // else{flag=false;  alert("Invalid Designation");}
+        if(designation.match(letters)){}
+        else{flag=false;  alert("Invalid Designation");}
 
-        // if(contact.value.match(number)){}
-        // else{flag=false;  alert("Invalid Contact");}
+        if(contact.match(number)){}
+        else{flag=false;  alert("Invalid Contact");}
 
         
-        if(email.value.match(mailformat)) {}
+        if(email.match(mailformat)) {}
         else{flag=false;  alert("Invalid Email");}
         
         return flag;

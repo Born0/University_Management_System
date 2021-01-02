@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             $material->setFile_path($target_file);
         } else {
-            $file_status = "Sorry, there was an error uploading your file.";
+            $file_status = " error uploading file.";
         }
 
 
